@@ -2,7 +2,7 @@ import os
 import sys
 import json
 import time
-import base64
+import shutil
 import threading
 import subprocess
 import urllib.parse
@@ -13,25 +13,36 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SESSION_DIR = os.path.join(BASE_DIR, ".active_session")
 PORT = 8765
 
-# Global Shared State
+try:
+    import ctypes
+    user32 = ctypes.windll.user32
+    screen_w = user32.GetSystemMetrics(0)
+    screen_h = user32.GetSystemMetrics(1)
+    half_w = screen_w // 2
+except Exception:
+    screen_w = 1920
+    screen_h = 1080
+    half_w = 960
+
+# Global State
 state = {
-    "status": "Idle",
+    "status": "Ready",
+    "engine": "ollama", # "ollama" or "gemini"
     "active_skill": "None",
     "topic": "None",
     "lesson": 0,
     "total_lessons": 30,
-    "current_question": "",
+    "current_question": "Click a module above to launch Chrome on the right side.",
     "options": [],
     "selected_option": "",
-    "ai_reasoning": "",
+    "ai_reasoning": "Ollama / Gemini reasoning will display here in real-time.",
     "logs": []
 }
 
-active_runner = None
-active_runner_stop_event = threading.Event()
+active_runner_process = None
+active_runner_thread = None
 sse_clients = []
 clients_lock = threading.Lock()
-latest_frame = None
 
 def broadcast_event(event_type: str, data: dict):
     payload = f"event: {event_type}\ndata: {json.dumps(data)}\n\n".encode("utf-8")
@@ -51,7 +62,7 @@ def append_log(message: str):
     timestamp = time.strftime("%H:%M:%S")
     formatted = f"[{timestamp}] {message}"
     state["logs"].append(formatted)
-    if len(state["logs"]) > 200:
+    if len(state["logs"]) > 250:
         state["logs"].pop(0)
     broadcast_event("log", {"line": formatted})
 
@@ -59,465 +70,538 @@ def update_ai_state(data: dict):
     state.update(data)
     broadcast_event("ai_state", state)
 
-# HTML / CSS / JS for VS Code Styled Platform
+# HTML / CSS / JS matching PixelCraft Design with 100% fidelity
 HTML_PAGE = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bharat English Autonomous Platform (VS Code Edition)</title>
+  <title>BharatCraft • Autonomous Desktop Platform</title>
   <style>
     :root {
-      --bg-dark: #181825;
-      --bg-sidebar: #1e1e2e;
-      --bg-card: #252538;
-      --bg-preview: #11111b;
-      --text-main: #cdd6f4;
-      --text-dim: #a6adc8;
-      --accent-blue: #89b4fa;
-      --accent-green: #a6e3a1;
+      --bg-main: #0a0e17;
+      --bg-card: #121824;
+      --bg-card-subtle: #162032;
+      --border-blue: rgba(0, 242, 254, 0.2);
+      --border-card: #1f2b42;
+      --accent-cyan: #00f2fe;
+      --accent-blue: #4facfe;
+      --accent-green: #38ef7d;
+      --accent-pink: #f38ba8;
       --accent-yellow: #f9e2af;
-      --accent-peach: #fab387;
-      --accent-red: #f38ba8;
-      --border-color: #313244;
+      --text-white: #ffffff;
+      --text-muted: #8e9bb0;
+      --gradient-cyan: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --gradient-card: linear-gradient(180deg, #121824 0%, #0d121c 100%);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-main);
+      background: var(--bg-main);
+      color: var(--text-white);
       height: 100vh;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-    }
-    /* Title Bar */
-    .titlebar {
-      height: 38px;
-      background: #11111b;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 12px;
       user-select: none;
     }
-    .titlebar-left { display: flex; align-items: center; gap: 8px; font-weight: 600; }
-    .badge-status {
+
+    /* Top App Header (PixelCraft Styled) */
+    .app-header {
+      height: 60px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-card);
+      background: rgba(10, 14, 23, 0.95);
+    }
+    .header-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--gradient-cyan);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+      font-size: 18px;
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title-row { display: flex; align-items: center; gap: 8px; }
+    .app-title { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .badge-pill {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(56, 239, 125, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(56, 239, 125, 0.3);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 3px 10px;
-      border-radius: 12px;
-      background: #252538;
-      font-size: 11px;
-      color: var(--text-dim);
+      gap: 4px;
     }
-    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #6c7086; }
-    .badge-dot.active { background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+    .app-desc { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
 
-    /* Main Workspace Layout */
-    .workspace {
+    /* Main Container */
+    .main-container {
       display: flex;
       flex: 1;
-      height: calc(100vh - 38px);
+      height: calc(100vh - 60px);
+      padding: 16px;
+      gap: 16px;
     }
 
-    /* Left Side: Controller & Logs */
-    .left-panel {
-      width: 48%;
-      background: var(--bg-sidebar);
-      border-right: 1px solid var(--border-color);
+    /* Left Control Column (38%) */
+    .left-column {
+      width: 44%;
       display: flex;
       flex-direction: column;
-      height: 100%;
+      gap: 12px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .left-column::-webkit-scrollbar { width: 5px; }
+    .left-column::-webkit-scrollbar-thumb { background: #1f2b42; border-radius: 3px; }
+
+    /* PixelCraft Card Base */
+    .card-panel {
+      background: var(--gradient-card);
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      padding: 14px 16px;
+      position: relative;
     }
 
-    /* Action Control Toolbar */
-    .toolbar {
-      padding: 12px 16px;
-      background: var(--bg-dark);
-      border-bottom: 1px solid var(--border-color);
-    }
-    .account-bar {
+    .panel-header {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #fff;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed var(--border-color);
+      justify-content: space-between;
+      margin-bottom: 12px;
     }
-    .btn-friend {
-      background: #313244;
-      border: 1px solid var(--accent-peach);
-      color: var(--accent-peach);
+    .panel-header-icon { display: flex; align-items: center; gap: 6px; }
+
+    /* Engine Tabs */
+    .engine-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .tab-btn {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border-card);
+      background: var(--bg-card-subtle);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
+    }
+
+    /* Action Buttons (PixelCraft Style) */
+    .preset-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .btn-preset {
+      padding: 10px 12px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      transition: all 0.2s;
+    }
+    .btn-preset:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 242, 254, 0.08);
+      transform: translateY(-1px);
+    }
+    .btn-preset.primary {
+      grid-column: span 2;
+      background: var(--gradient-cyan);
+      color: #000;
+      border: none;
+      font-weight: 700;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+    }
+    .btn-preset.primary:hover { opacity: 0.95; transform: translateY(-1px); }
+    .btn-title { font-size: 12px; font-weight: 700; }
+    .btn-sub { font-size: 10px; opacity: 0.7; }
+
+    /* Account Bar */
+    .friend-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: rgba(243, 139, 168, 0.08);
+      border: 1px dashed rgba(243, 139, 168, 0.3);
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .friend-btn {
+      background: var(--accent-pink);
+      color: #111;
+      border: none;
       padding: 5px 12px;
       border-radius: 6px;
       font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-friend:hover { background: var(--accent-peach); color: #11111b; }
-
-    .btn-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      gap: 6px;
-    }
-    .btn {
-      padding: 8px 10px;
-      border: none;
-      border-radius: 6px;
-      font-size: 11px;
       font-weight: 700;
       cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.2s, transform 0.1s;
     }
-    .btn:active { transform: scale(0.97); }
-    .btn-run-all { background: var(--accent-peach); color: #11111b; }
-    .btn-listening { background: var(--accent-blue); color: #11111b; }
-    .btn-reading { background: var(--accent-green); color: #11111b; }
-    .btn-writing { background: var(--accent-yellow); color: #11111b; }
-    .btn-stop { background: var(--accent-red); color: #11111b; }
 
-    /* Middle Area: AI State Cards */
-    .ai-dashboard {
-      padding: 14px 16px;
-      flex: 1;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    /* Live Progress Bar */
+    .progress-box {
+      margin-top: 4px;
     }
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 12px 14px;
-    }
-    .card-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--accent-blue);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .progress-bar-container {
+    .progress-track {
       width: 100%;
       height: 8px;
-      background: #1e1e2e;
+      background: #0d121c;
       border-radius: 4px;
       overflow: hidden;
-      margin-top: 6px;
+      margin: 8px 0 4px;
+      border: 1px solid var(--border-card);
     }
-    .progress-bar-fill {
-      height: 100%;
+    .progress-bar {
       width: 0%;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+      height: 100%;
+      background: var(--gradient-cyan);
       transition: width 0.3s;
     }
-    .question-box {
-      font-size: 13px;
-      color: #fff;
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-    .options-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .option-item {
-      font-size: 12px;
-      padding: 5px 8px;
-      border-radius: 4px;
-      background: #1e1e2e;
-      color: var(--text-dim);
-      border-left: 3px solid transparent;
-    }
-    .option-item.selected {
-      background: #2b392b;
-      color: var(--accent-green);
-      font-weight: 600;
-      border-left: 3px solid var(--accent-green);
-    }
-    .reasoning-text {
-      font-size: 12px;
-      color: var(--accent-yellow);
-      line-height: 1.4;
-      font-style: italic;
-    }
 
-    /* Terminal Console */
-    .terminal-container {
-      height: 160px;
-      background: #11111b;
-      border-top: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
+    /* Question & Reasoning Area */
+    .ai-card {
+      background: #0d121c;
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 8px;
     }
-    .terminal-header {
-      height: 26px;
-      background: #181825;
-      padding: 0 12px;
+    .q-text { font-size: 12px; color: #fff; line-height: 1.4; margin-bottom: 6px; }
+    .reason-box { font-size: 11px; color: var(--accent-cyan); font-style: italic; line-height: 1.4; }
+
+    /* Bottom Terminal */
+    .term-box {
+      height: 140px;
+      background: #0d121c;
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-family: Consolas, monospace;
       font-size: 11px;
-      color: var(--text-dim);
-      display: flex;
-      align-items: center;
-      font-weight: 600;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .terminal-body {
-      flex: 1;
-      padding: 8px 12px;
+      color: var(--accent-green);
       overflow-y: auto;
-      font-family: "Consolas", "Courier New", monospace;
-      font-size: 11px;
-      color: var(--accent-green);
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
-    /* Right Side: Chrome Live Preview */
-    .right-panel {
-      width: 52%;
-      background: var(--bg-preview);
+    /* Right Column (Workspace / Live Chrome Preview - 56%) */
+    .right-column {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      height: 100%;
     }
-    .preview-bar {
-      height: 38px;
-      background: #1e1e2e;
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      padding: 0 12px;
-      gap: 10px;
-    }
-    .preview-url {
+
+    .preview-container {
       flex: 1;
-      background: #11111b;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 4px 10px;
-      font-size: 11px;
-      color: var(--text-dim);
-      font-family: monospace;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .preview-status {
+      background: var(--gradient-card);
+      border: 2px dashed rgba(0, 242, 254, 0.3);
+      border-radius: 16px;
       display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--accent-green);
-      font-weight: 600;
-    }
-    .canvas-container {
-      flex: 1;
-      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
-      background: #000;
       overflow: hidden;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
     }
-    #screencastCanvas {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      cursor: crosshair;
-    }
-    .placeholder-overlay {
-      position: absolute;
+
+    .preview-center {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      color: var(--text-dim);
+      text-align: center;
+      gap: 14px;
+      max-width: 480px;
     }
-    .spinner {
-      width: 32px;
-      height: 32px;
-      border: 3px solid #313244;
-      border-top-color: var(--accent-blue);
+    .glow-icon {
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
+      background: rgba(0, 242, 254, 0.1);
+      border: 2px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .preview-heading { font-size: 20px; font-weight: 700; color: #fff; }
+    .preview-subtext { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .pill-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+    .pill-tag {
+      font-size: 11px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-card);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    .active-chrome-screen {
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+    }
+    .chrome-url-bar {
+      height: 40px;
+      background: #121824;
+      border-bottom: 1px solid var(--border-card);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 12px;
+    }
+    .url-input {
+      flex: 1;
+      background: #0a0e17;
+      border: 1px solid var(--border-card);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+    .chrome-canvas-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    #liveCanvas {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Title Bar -->
-  <div class="titlebar">
-    <div class="titlebar-left">
-      <span>🚀 Bharat English Autonomous IDE</span>
-      <span style="color: var(--text-dim);">|</span>
-      <span style="color: var(--accent-blue);">100% Offline Ollama Engine</span>
+  <!-- Top Header -->
+  <div class="app-header">
+    <div class="header-logo-group">
+      <div class="logo-badge">⚡</div>
+      <div class="title-group">
+        <div class="title-row">
+          <span class="app-title">BharatCraft Autonomous Suite</span>
+          <span class="badge-pill" id="headerBadge">● 100% Offline Ollama + Gemini Ready</span>
+        </div>
+        <span class="app-desc">Side-by-side Chrome automation & 100% accuracy solver for Bharat English</span>
+      </div>
     </div>
-    <div class="badge-status">
-      <div id="statusDot" class="badge-dot"></div>
-      <span id="statusText">Idle</span>
+    <div>
+      <button onclick="triggerAction('stop')" style="background: rgba(243, 139, 168, 0.2); border: 1px solid var(--accent-pink); color: var(--accent-pink); padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer;">⏹ Stop Runner</button>
     </div>
   </div>
 
-  <!-- Workspace -->
-  <div class="workspace">
+  <!-- Main Container -->
+  <div class="main-container">
 
-    <!-- Left Panel: Controls, AI Thoughts & Logs -->
-    <div class="left-panel">
+    <!-- Left Controls Panel -->
+    <div class="left-column">
       
-      <!-- Toolbar -->
-      <div class="toolbar">
-        <div class="account-bar">
-          <span style="font-size: 11px; color: var(--text-dim);">Account: <strong>Multiple Friends Active</strong></span>
-          <button class="btn-friend" onclick="triggerAction('new_friend')">👤 New Friend Login</button>
+      <!-- Panel 1: Presets & Engine -->
+      <div class="card-panel">
+        <div class="panel-header">
+          <div class="panel-header-icon">⚙️ AI ENGINE & COURSE PRESETS</div>
+          <span id="statusIndicator" style="color: var(--accent-cyan); font-size: 10px;">IDLE</span>
         </div>
-        <div class="btn-grid">
-          <button class="btn btn-run-all" onclick="triggerAction('start', 'full')">⚡ Run All (90)</button>
-          <button class="btn btn-listening" onclick="triggerAction('start', 'listening')">🎧 Listening</button>
-          <button class="btn btn-reading" onclick="triggerAction('start', 'reading')">📖 Reading</button>
-          <button class="btn btn-writing" onclick="triggerAction('start', 'writing')">✍️ Writing</button>
-          <button class="btn btn-stop" onclick="triggerAction('stop')">⏹ Stop</button>
+
+        <!-- Engine Mode Switcher -->
+        <div class="engine-tabs">
+          <button class="tab-btn active" id="tabOllama" onclick="selectEngine('ollama')">
+            <span>🧠 Local Ollama (Offline)</span>
+          </button>
+          <button class="tab-btn" id="tabGemini" onclick="selectEngine('gemini')">
+            <span>🌐 Google Gemini (Online)</span>
+          </button>
+        </div>
+
+        <!-- Friend Switcher -->
+        <div class="friend-box">
+          <span style="font-size: 11px; color: #fff;">Helping a Friend?</span>
+          <button class="friend-btn" onclick="triggerAction('new_friend')">👤 New Friend Login</button>
+        </div>
+
+        <!-- Course Run Presets -->
+        <div class="preset-grid">
+          <button class="btn-preset primary" onclick="triggerAction('start', 'full')">
+            <span class="btn-title">⚡ Run Full Course (All 3 Skills • 90 Lessons)</span>
+            <span class="btn-sub">Listening (30) ➔ Reading (30) ➔ Writing (30) End-to-End</span>
+          </button>
+          <button class="btn-preset" onclick="triggerAction('start', 'listening')">
+            <span class="btn-title">🎧 Listening (30)</span>
+            <span class="btn-sub">Topics 1 & 2 • Audio MCQ</span>
+          </button>
+          <button class="btn-preset" onclick="triggerAction('start', 'reading')">
+            <span class="btn-title">📖 Reading (30)</span>
+            <span class="btn-sub">Topics 1 & 2 • Passages</span>
+          </button>
+          <button class="btn-preset" style="grid-column: span 2;" onclick="triggerAction('start', 'writing')">
+            <span class="btn-title">✍️ Writing Module (30 Lessons)</span>
+            <span class="btn-sub">Email Responses • 100% Rubric & Word Count</span>
+          </button>
         </div>
       </div>
 
-      <!-- AI Cards -->
-      <div class="ai-dashboard">
-        
-        <!-- Progress Card -->
-        <div class="card">
-          <div class="card-title">
-            <span id="skillBadge">Course Progress</span>
-            <span id="progressRatio">0 / 30</span>
+      <!-- Panel 2: Live AI Solver Inspector -->
+      <div class="card-panel">
+        <div class="panel-header">
+          <div class="panel-header-icon">📋 LIVE QUESTION & REASONING</div>
+          <span id="progressText" style="color: var(--accent-green); font-size: 11px;">0 / 30</span>
+        </div>
+
+        <div class="progress-box">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted);">
+            <span id="topicName">Waiting to begin...</span>
+            <span id="pctText">0%</span>
           </div>
-          <div id="topicTitle" style="font-size: 12px; font-weight: 600; color: #fff;">Select a skill to start automation</div>
-          <div class="progress-bar-container">
-            <div id="progressBar" class="progress-bar-fill"></div>
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
           </div>
         </div>
 
-        <!-- Question Card -->
-        <div class="card">
-          <div class="card-title">Active Test Question</div>
-          <div id="questionText" class="question-box">Waiting for question from live Chrome...</div>
-          <div id="optionsContainer" class="options-list"></div>
+        <div class="ai-card">
+          <div style="font-size: 10px; color: var(--text-muted); font-weight: 700; margin-bottom: 4px;">CURRENT QUESTION:</div>
+          <div id="qText" class="q-text">Click a preset above to launch Chrome and begin.</div>
+          <div id="aiReason" class="reason-box">Ollama / Gemini will evaluate the 100% correct answer here.</div>
         </div>
-
-        <!-- Ollama Reasoning Card -->
-        <div class="card">
-          <div class="card-title">🧠 Ollama Offline Thought Process</div>
-          <div id="reasoningText" class="reasoning-text">Local model reasoning will appear here when evaluating answers.</div>
-        </div>
-
       </div>
 
-      <!-- Terminal Output -->
-      <div class="terminal-container">
-        <div class="terminal-header">Integrated Runner Terminal</div>
-        <div id="terminalBody" class="terminal-body"></div>
+      <!-- Panel 3: Runner Console -->
+      <div class="card-panel">
+        <div class="panel-header">
+          <div class="panel-header-icon">💻 RUNNER CONSOLE</div>
+        </div>
+        <div class="term-box" id="termLogs"></div>
       </div>
 
     </div>
 
-    <!-- Right Panel: Live Chrome Preview -->
-    <div class="right-panel">
-      <div class="preview-bar">
-        <div class="preview-url" id="liveUrl">https://corporate.bharatenglish.org</div>
-        <div class="preview-status">
-          <div class="badge-dot active"></div>
-          <span>LIVE CHROME</span>
+    <!-- Right Workspace Column (Chrome Live Preview) -->
+    <div class="right-column">
+      <div class="preview-container">
+        
+        <!-- Idle Placeholder -->
+        <div class="preview-center" id="idleCenter">
+          <div class="glow-icon">🌐</div>
+          <div class="preview-heading">Live Chrome Workspace Ready</div>
+          <div class="preview-subtext">
+            When you click any course button on the left, <strong>Google Chrome will launch on your right screen</strong>.
+            You can log in for yourself or your friend, and watch the AI solve 100% of the lessons in real time.
+          </div>
+          <div class="pill-tags">
+            <div class="pill-tag">✔ 100% Score Guaranteed</div>
+            <div class="pill-tag">✔ Multi-Account Friend Support</div>
+            <div class="pill-tag">✔ Auto Video Dismiss</div>
+            <div class="pill-tag">✔ Auto Learn Scroll</div>
+          </div>
         </div>
-      </div>
-      <div class="canvas-container">
-        <div id="previewPlaceholder" class="placeholder-overlay">
-          <div class="spinner"></div>
-          <p>Connecting to Live Chrome Browser Engine...</p>
+
+        <!-- Live Browser Stream when Active -->
+        <div class="active-chrome-screen" id="activeScreen">
+          <div class="chrome-url-bar">
+            <span style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">CHROME:</span>
+            <div class="url-input" id="currentUrl">https://corporate.bharatenglish.org</div>
+            <span style="font-size: 11px; color: var(--accent-green); font-weight: 600;">● AUTOMATION ACTIVE</span>
+          </div>
+          <div class="chrome-canvas-wrap">
+            <img id="liveCanvas" alt="Live Chrome Preview" />
+          </div>
         </div>
-        <img id="screencastCanvas" style="display: none;" alt="Chrome Preview" />
+
       </div>
     </div>
 
   </div>
 
   <script>
-    const canvas = document.getElementById('screencastCanvas');
-    const placeholder = document.getElementById('previewPlaceholder');
-    const statusDot = document.getElementById('statusDot');
-    const statusText = document.getElementById('statusText');
-    const skillBadge = document.getElementById('skillBadge');
-    const progressRatio = document.getElementById('progressRatio');
-    const topicTitle = document.getElementById('topicTitle');
-    const progressBar = document.getElementById('progressBar');
-    const questionText = document.getElementById('questionText');
-    const optionsContainer = document.getElementById('optionsContainer');
-    const reasoningText = document.getElementById('reasoningText');
-    const terminalBody = document.getElementById('terminalBody');
+    let activeEngine = 'ollama';
 
-    // Server-Sent Events (SSE) Listener
+    function selectEngine(eng) {
+      activeEngine = eng;
+      document.getElementById('tabOllama').className = eng === 'ollama' ? 'tab-btn active' : 'tab-btn';
+      document.getElementById('tabGemini').className = eng === 'gemini' ? 'tab-btn active' : 'tab-btn';
+      document.getElementById('headerBadge').textContent = eng === 'ollama' ? '● 100% Local Ollama Active' : '● Online Google Gemini Active';
+      fetch('/api/engine', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ engine: eng })
+      });
+    }
+
     const evtSource = new EventSource('/api/stream');
+
+    evtSource.addEventListener('log', (e) => {
+      const data = JSON.parse(e.data);
+      const term = document.getElementById('termLogs');
+      const div = document.createElement('div');
+      div.textContent = data.line;
+      term.appendChild(div);
+      term.scrollTop = term.scrollHeight;
+    });
 
     evtSource.addEventListener('frame', (e) => {
       const data = JSON.parse(e.data);
       if (data.image) {
-        canvas.src = "data:image/jpeg;base64," + data.image;
-        if (canvas.style.display === 'none') {
-          canvas.style.display = 'block';
-          placeholder.style.display = 'none';
-        }
+        document.getElementById('idleCenter').style.display = 'none';
+        document.getElementById('activeScreen').style.display = 'flex';
+        document.getElementById('liveCanvas').src = 'data:image/jpeg;base64,' + data.image;
       }
-    });
-
-    evtSource.addEventListener('log', (e) => {
-      const data = JSON.parse(e.data);
-      const line = document.createElement('div');
-      line.textContent = data.line;
-      terminalBody.appendChild(line);
-      terminalBody.scrollTop = terminalBody.scrollHeight;
     });
 
     evtSource.addEventListener('ai_state', (e) => {
       const data = JSON.parse(e.data);
-      statusText.textContent = data.status || 'Active';
-      statusDot.className = data.status && data.status !== 'Idle' ? 'badge-dot active' : 'badge-dot';
-      
-      if (data.active_skill) skillBadge.textContent = data.active_skill;
-      if (data.topic) topicTitle.textContent = data.topic;
+      if (data.status) document.getElementById('statusIndicator').textContent = data.status.toUpperCase();
+      if (data.topic) document.getElementById('topicName').textContent = data.topic;
+      if (data.current_question) document.getElementById('qText').textContent = data.current_question;
+      if (data.ai_reasoning) document.getElementById('aiReason').textContent = data.ai_reasoning;
+
       if (data.lesson !== undefined && data.total_lessons) {
-        progressRatio.textContent = `${data.lesson} / ${data.total_lessons}`;
+        document.getElementById('progressText').textContent = `${data.lesson} / ${data.total_lessons}`;
         const pct = Math.round((data.lesson / data.total_lessons) * 100);
-        progressBar.style.width = pct + '%';
-      }
-
-      if (data.current_question) {
-        questionText.textContent = data.current_question;
-      }
-
-      if (data.options && data.options.length > 0) {
-        optionsContainer.innerHTML = '';
-        data.options.forEach(opt => {
-          const div = document.createElement('div');
-          div.className = 'option-item' + (data.selected_option === opt.text ? ' selected' : '');
-          div.textContent = `[${opt.index}] ${opt.text}`;
-          optionsContainer.appendChild(div);
-        });
-      }
-
-      if (data.ai_reasoning) {
-        reasoningText.textContent = data.ai_reasoning;
+        document.getElementById('pctText').textContent = pct + '%';
+        document.getElementById('progressBar').style.width = pct + '%';
       }
     });
 
@@ -525,7 +609,7 @@ HTML_PAGE = """<!DOCTYPE html>
       fetch('/api/action', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: action, mode: mode })
+        body: JSON.stringify({ action: action, mode: mode, engine: activeEngine })
       }).catch(err => console.error(err));
     }
   </script>
@@ -536,7 +620,7 @@ HTML_PAGE = """<!DOCTYPE html>
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
-        if parsed.path == "/" or parsed.path == "/index.html":
+        if parsed.path in ["/", "/index.html"]:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.end_headers()
@@ -557,13 +641,22 @@ class RequestHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
-        if parsed.path == "/api/action":
-            length = int(self.headers.get("Content-Length", 0))
-            body = self.rfile.read(length).decode("utf-8")
-            data = json.loads(body)
+        length = int(self.headers.get("Content-Length", 0))
+        body = self.rfile.read(length).decode("utf-8") if length > 0 else "{}"
+        data = json.loads(body)
+
+        if parsed.path == "/api/engine":
+            eng = data.get("engine", "ollama")
+            state["engine"] = eng
+            append_log(f"[Engine Config] Active AI Engine switched to: {eng.upper()}")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps({"ok": True}).encode("utf-8"))
+
+        elif parsed.path == "/api/action":
             action = data.get("action")
             mode = data.get("mode")
-
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
@@ -574,7 +667,8 @@ class RequestHandler(BaseHTTPRequestHandler):
             elif action == "stop":
                 stop_runner()
             elif action == "new_friend":
-                clear_session()
+                clear_friend_session()
+
         else:
             self.send_response(404)
             self.end_headers()
@@ -585,20 +679,19 @@ class RequestHandler(BaseHTTPRequestHandler):
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
 
-def clear_session():
-    import shutil
+def clear_friend_session():
     if os.path.exists(SESSION_DIR):
         try:
             shutil.rmtree(SESSION_DIR, ignore_errors=True)
         except Exception:
             pass
     os.environ["BHARAT_FORCE_LOGOUT"] = "1"
-    append_log("[Account Switch] Active session wiped! Starting next runner will prompt fresh friend login.")
-    update_ai_state({"status": "Ready for Friend Login", "current_question": "Click a skill to open login for your friend."})
+    append_log("[Account Switch] Previous session wiped! Ready for new friend's login.")
+    update_ai_state({"status": "Ready for Friend", "current_question": "Click a module above to launch login for your friend."})
 
 def start_runner(mode):
-    global active_runner
-    if active_runner and active_runner.is_alive():
+    global active_runner_process, active_runner_thread
+    if active_runner_process and active_runner_process.poll() is None:
         append_log("[!] A course module is already running. Please Stop it first.")
         return
 
@@ -606,6 +699,7 @@ def start_runner(mode):
     update_ai_state({"status": f"Running {mode.upper()}", "active_skill": mode.capitalize()})
 
     def run_worker():
+        global active_runner_process
         script_map = {
             "full": os.path.join(BASE_DIR, "run_full_course.py"),
             "listening": os.path.join(BASE_DIR, "listening", "run_live.py"),
@@ -613,7 +707,10 @@ def start_runner(mode):
             "writing": os.path.join(BASE_DIR, "writing ow1", "run_live.py"),
         }
         script_path = script_map.get(mode, script_map["full"])
-        proc = subprocess.Popen(
+        env = os.environ.copy()
+        env["BHARAT_AI_ENGINE"] = state["engine"]
+
+        active_runner_process = subprocess.Popen(
             [sys.executable, "-u", script_path],
             cwd=os.path.dirname(script_path),
             stdout=subprocess.PIPE,
@@ -621,45 +718,61 @@ def start_runner(mode):
             text=True,
             encoding="utf-8",
             errors="replace",
-            bufsize=1
+            bufsize=1,
+            env=env
         )
-        for line in iter(proc.stdout.readline, ""):
+        for line in iter(active_runner_process.stdout.readline, ""):
             if line:
-                append_log(line.rstrip())
-        proc.stdout.close()
-        proc.wait()
-        update_ai_state({"status": "Completed / Idle"})
-        append_log(f"{mode.upper()} completed!")
+                cleaned = line.rstrip()
+                append_log(cleaned)
+                # Parse lines for dashboard updates
+                if "PROCESSING:" in cleaned or "ENTERING" in cleaned:
+                    update_ai_state({"topic": cleaned.split(":")[-1].strip()})
+                elif "QUESTION:" in cleaned:
+                    update_ai_state({"current_question": cleaned})
+                elif "Selected Option" in cleaned or "Heuristic:" in cleaned or "Offline Ollama" in cleaned or "Gemini" in cleaned:
+                    update_ai_state({"ai_reasoning": cleaned})
 
-    active_runner = threading.Thread(target=run_worker, daemon=True)
-    active_runner.start()
+        active_runner_process.stdout.close()
+        ret = active_runner_process.wait()
+        update_ai_state({"status": "Completed / Idle"})
+        append_log(f"{mode.upper()} finished with code {ret}")
+
+    active_runner_thread = threading.Thread(target=run_worker, daemon=True)
+    active_runner_thread.start()
 
 def stop_runner():
-    append_log("[User Request] Stopping runners...")
-    update_ai_state({"status": "Stopped"})
+    global active_runner_process
+    if active_runner_process and active_runner_process.poll() is None:
+        active_runner_process.terminate()
+        append_log("[Stopped] User stopped current runner.")
+        update_ai_state({"status": "Stopped"})
+    else:
+        append_log("[!] No active runner to stop.")
 
 def launch_desktop():
     # 1. Start HTTP Server in background thread
     server = ThreadedHTTPServer(("127.0.0.1", PORT), RequestHandler)
     server_thread = threading.Thread(target=server.serve_forever, daemon=True)
     server_thread.start()
-    print(f"[Platform Server] Listening on http://127.0.0.1:{PORT}")
+    print(f"[BharatCraft Server] Listening on http://127.0.0.1:{PORT}")
 
-    # 2. Launch Chrome in Frameless Desktop App Mode (VS Code feel)
-    time.sleep(1)
+    time.sleep(0.8)
     app_url = f"http://127.0.0.1:{PORT}"
+
+    # Dock BharatCraft app on the LEFT HALF of the screen (0 to half_w)
     try:
         subprocess.Popen([
             "chrome.exe",
             f"--app={app_url}",
-            "--start-maximized",
-            "--window-name=BharatEnglishIDE"
+            f"--window-position=0,0",
+            f"--window-size={half_w},{screen_h}",
+            "--window-name=BharatCraftAI"
         ])
     except Exception:
         import webbrowser
         webbrowser.open(app_url)
 
-    # Keep server alive
     try:
         while True:
             time.sleep(1)

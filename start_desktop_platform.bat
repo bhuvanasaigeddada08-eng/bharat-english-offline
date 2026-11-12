@@ -1,12 +1,12 @@
 @echo off
-title Bharat English Autonomous IDE (VS Code Edition)
+title BharatCraft - Autonomous Desktop Platform
 color 0b
 
 echo ======================================================================
-echo  Launching Bharat English Autonomous Platform (VS Code Style)
-echo  Features:
-echo   - Left Pane: AI Controller, Progress Tracker, Ollama Thoughts & Terminal
-echo   - Right Pane: Live Embedded Chrome Preview
+echo  Launching BharatCraft Autonomous Suite
+echo  Design:
+echo   - Left Half:  BharatCraft AI Controller (PixelCraft Theme)
+echo   - Right Half: Live Google Chrome Browser (Auto-Tiled)
 echo ======================================================================
 echo.
 

@@ -10,8 +10,10 @@ try:
     screen_w = user32.GetSystemMetrics(0)
     screen_h = user32.GetSystemMetrics(1)
     half_w = screen_w // 2
+    right_w = screen_w - half_w
 except Exception:
     half_w = 960
+    right_w = 960
     screen_h = 1080
 
 class BrowserManager:
@@ -29,8 +31,8 @@ class BrowserManager:
             headless=self.headless,
             viewport=None,
             args=[
-                f"--window-position=0,0",
-                f"--window-size={half_w},{screen_h}",
+                f"--window-position={half_w},0",
+                f"--window-size={right_w},{screen_h}",
                 "--no-first-run",
                 "--no-default-browser-check"
             ]
