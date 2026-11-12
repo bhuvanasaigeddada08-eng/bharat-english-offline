@@ -27,3 +27,6 @@ __pycache__/
 # OS files
 Thumbs.db
 .DS_Store
+.active_session/
+*/.active_session/
+*/**/.active_session/
