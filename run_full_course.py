@@ -30,7 +30,7 @@ def run_course():
     print(" Press Ctrl+C at any time to pause or exit.")
     print("=" * 75)
 
-    for step in STEPS:
+    for idx, step in enumerate(STEPS):
         name = step["name"]
         script_path = step["script"]
         cwd = step["cwd"]
@@ -40,26 +40,24 @@ def run_course():
             continue
 
         print("\n" + "#" * 75)
-        print(f" >>> [STAGE START] Running {name.upper()} (All 30 Modules) <<<")
+        print(f" >>> [STAGE {idx+1}/3] STARTING {name.upper()} (All 30 Modules) <<<")
         print("#" * 75 + "\n")
 
-        # Run the step in a subprocess using the current Python executable
-        ret_code = subprocess.run([sys.executable, script_path], cwd=cwd).returncode
+        # Run each module in non-blocking unbuffered mode
+        env = os.environ.copy()
+        env["PYTHONUNBUFFERED"] = "1"
+        ret_code = subprocess.run([sys.executable, "-u", script_path], cwd=cwd, env=env).returncode
 
         if ret_code != 0:
-            print(f"\n[Warning] {name} exited with code {ret_code}.")
-            choice = input(f"Do you want to continue to the next skill? (y/n, default y): ").strip().lower()
-            if choice == "n":
-                print("\n[Exiting] Stopped by user.")
-                return
+            print(f"\n[Notice] {name} module step finished with code {ret_code}. Moving to next section...")
         else:
-            print(f"\n[Success] {name} module completed all 30 lessons!")
+            print(f"\n[Success] {name} module completed 100%!")
 
-        print("\nCooling down for 5 seconds before next section...")
-        time.sleep(5)
+        print("\nCooling down for 3 seconds before next skill...")
+        time.sleep(3)
 
     print("\n" + "=" * 75)
-    print(" 🎉 CONGRATULATIONS! ALL 3 SKILLS (LISTENING, READING, WRITING) ARE FINISHED! 🎉")
+    print(" 🎉 ALL 3 SKILLS (LISTENING, READING, WRITING) ARE FINISHED! 🎉")
     print("=" * 75)
 
 if __name__ == "__main__":

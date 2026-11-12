@@ -678,6 +678,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
+    allow_reuse_address = True
 
 def clear_friend_session():
     global active_runner_process
@@ -757,6 +758,18 @@ def stop_runner():
     else:
         append_log("[!] No active runner to stop.")
 
+def find_chrome_path():
+    candidates = [
+        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+        r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+        os.path.expandvars(r"%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe"),
+        "chrome.exe"
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return "chrome.exe"
+
 def launch_desktop():
     # 1. Start HTTP Server in background thread
     server = ThreadedHTTPServer(("127.0.0.1", PORT), RequestHandler)
@@ -766,11 +779,12 @@ def launch_desktop():
 
     time.sleep(0.8)
     app_url = f"http://127.0.0.1:{PORT}"
+    chrome_bin = find_chrome_path()
 
     # Dock BharatCraft app on the LEFT HALF of the screen (0 to half_w)
     try:
         subprocess.Popen([
-            "chrome.exe",
+            chrome_bin,
             f"--app={app_url}",
             f"--window-position=0,0",
             f"--window-size={half_w},{screen_h}",

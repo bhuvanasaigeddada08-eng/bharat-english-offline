@@ -56,22 +56,28 @@ def ensure_logged_in(page, target_url):
             page.wait_for_timeout(3500)
 
     # 3. Detect if currently on login screen
-    is_login_page = ("login" in page.url or 
-                     page.locator("input[type='password']").count() > 0 or 
-                     page.locator("button:has-text('Sign In'), button:has-text('Log In'), button:has-text('Login')").count() > 0)
+    is_login_page = ("login" in page.url.lower() or 
+                     page.locator("button:has-text('Send OTP'), button:has-text('Sign In'), button:has-text('Log In')").count() > 0)
 
     if is_login_page:
         print("\n" + "=" * 70)
         print(" [ACTION REQUIRED] Please Log In to Bharat English in the Chrome window.")
-        print(" Enter credentials for your account or your friend's account.")
+        print(" (Enter mobile number/OTP or email credentials for you or your friend)")
         print(" Waiting for you to complete login... (Auto-starting after login)")
         print("=" * 70)
 
         while True:
-            page.wait_for_timeout(2500)
+            page.wait_for_timeout(2000)
             current_url = page.url
-            has_password = page.locator("input[type='password']").count() > 0
-            if "login" not in current_url and not has_password and ("adaptive-learning" in current_url or "dashboard" in current_url or "skill" in current_url):
+            
+            # If still on blank page, push to login URL
+            if current_url == "about:blank" or not current_url.startswith("http"):
+                page.goto(LOGIN_URL)
+                page.wait_for_timeout(2500)
+                continue
+
+            has_login_btn = page.locator("button:has-text('Send OTP'), button:has-text('Sign In'), button:has-text('Log In')").count() > 0
+            if "login" not in current_url.lower() and not has_login_btn:
                 print("\n[Success] Login detected! Proceeding to course modules...\n")
                 page.wait_for_timeout(2000)
                 page.goto(target_url)
@@ -350,13 +356,17 @@ def run_listening_course(total_target=30):
             except Exception:
                 pass
 
-            topic_cards = page.locator(".card").filter(has_text="lessons").all()
+            topic_cards = page.locator(".card, div[class*='card']").filter(has_text=re.compile(r'lesson|subtopic|topic|start|continue', re.I)).all()
+            if len(topic_cards) == 0:
+                topic_cards = page.locator(".card").all()
             print(f"[Dashboard] Found {len(topic_cards)} Course Topics on your account.")
 
             if len(topic_cards) == 0:
                 print("  [Notice] No course topic cards found. Checking if page requires re-login or refresh...")
                 ensure_logged_in(page, LISTENING_SKILL_URL)
-                topic_cards = page.locator(".card").filter(has_text="lessons").all()
+                topic_cards = page.locator(".card, div[class*='card']").filter(has_text=re.compile(r'lesson|subtopic|topic|start|continue', re.I)).all()
+                if len(topic_cards) == 0:
+                    topic_cards = page.locator(".card").all()
                 if len(topic_cards) == 0:
                     print("  [Notice] Still no topic cards found. Retrying in 5 seconds...")
                     page.wait_for_timeout(5000)
