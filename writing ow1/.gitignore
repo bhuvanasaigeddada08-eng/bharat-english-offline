@@ -1,0 +1,8 @@
+.browser_profile/
+*.png
+*.log
+session*.json
+.env
+__pycache__/
+*.pyc
+

@@ -1,0 +1,1052 @@
+[
+  {
+    "timestamp": "2026-11-11T22:16:27.415683",
+    "type": "listening",
+    "question": "What time is the meeting on Friday?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for Friday at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:16:53.683222",
+    "type": "listening",
+    "question": "When is the meeting confirmed for?",
+    "selected_option": "Thursday at 3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for Thursday at 3 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:16:59.897471",
+    "type": "listening",
+    "question": "When is the rescheduled meeting?",
+    "selected_option": "Monday at 2 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the meeting has been rescheduled to Monday at 2 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:17:04.881479",
+    "type": "listening",
+    "question": "What day is the meeting confirmed for?",
+    "selected_option": "Saturday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Nina confirms the meeting is on Saturday."
+  },
+  {
+    "timestamp": "2026-11-11T22:17:10.400710",
+    "type": "listening",
+    "question": "What time is the meeting confirmed for tomorrow?",
+    "selected_option": "9 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for 9 AM tomorrow."
+  },
+  {
+    "timestamp": "2026-11-11T22:17:40.613996",
+    "type": "listening",
+    "question": "What time is the meeting rescheduled to?",
+    "selected_option": "4 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Michael asks to move the meeting to 4 PM and Lucy agrees."
+  },
+  {
+    "timestamp": "2026-11-11T22:17:45.619757",
+    "type": "listening",
+    "question": "Why is the meeting moved to Monday?",
+    "selected_option": "A client visit is scheduled.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the rescheduling is due to a client visit."
+  },
+  {
+    "timestamp": "2026-11-11T22:17:50.698072",
+    "type": "listening",
+    "question": "When is the meeting rescheduled to?",
+    "selected_option": "Thursday at 3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states the manager asked if Thursday at 3 PM is suitable and Sarah confirmed it works."
+  },
+  {
+    "timestamp": "2026-11-11T22:17:56.031693",
+    "type": "listening",
+    "question": "Why does Matthew want to change the meeting day?",
+    "selected_option": "He has a dentist appointment.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Matthew specifies a dentist appointment as the reason for changing the meeting day."
+  },
+  {
+    "timestamp": "2026-11-11T22:18:00.964339",
+    "type": "listening",
+    "question": "Why does Alice want to reschedule the meeting?",
+    "selected_option": "She has a conflict on Thursday.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Alice wants to move the meeting because of a conflict on Thursday."
+  },
+  {
+    "timestamp": "2026-11-11T22:18:32.712604",
+    "type": "listening",
+    "question": "Has the meeting room been reserved for next Monday at 2 PM?",
+    "selected_option": "Yes, it has been reserved",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly confirms that the meeting room is reserved for next Monday at 2 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:18:38.429082",
+    "type": "listening",
+    "question": "When is the client meeting scheduled?",
+    "selected_option": "Friday at 3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for Friday at 3 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:18:44.944797",
+    "type": "listening",
+    "question": "Which meeting room is available tomorrow at 10 AM?",
+    "selected_option": "Room B",
+    "reasoning": "Gemini (gemini-3.5-flash): The transcript explicitly states that Ben confirms Room B is free at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:18:49.665518",
+    "type": "listening",
+    "question": "Which day does Olivia suggest for the meeting?",
+    "selected_option": "Friday afternoon",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Olivia suggests rescheduling to Friday afternoon."
+  },
+  {
+    "timestamp": "2026-11-11T22:18:54.445640",
+    "type": "listening",
+    "question": "Is Room A available on Thursday at 11 AM?",
+    "selected_option": "No, it's booked",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that Room A is already booked for Thursday at 11 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:19:24.794724",
+    "type": "listening",
+    "question": "How long is the meeting expected to last?",
+    "selected_option": "1 hour",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting will last about one hour."
+  },
+  {
+    "timestamp": "2026-11-11T22:19:40.111031",
+    "type": "listening",
+    "question": "What time is the meeting scheduled for?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): James confirms Sophia's question that the meeting is scheduled for 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:19:44.977931",
+    "type": "listening",
+    "question": "What is the first item on the meeting agenda?",
+    "selected_option": "Budget review",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the meeting will start with the budget review."
+  },
+  {
+    "timestamp": "2026-11-11T22:20:04.227155",
+    "type": "listening",
+    "question": "Who is expected to attend the meeting?",
+    "selected_option": "Everyone from the team, including the new manager",
+    "reasoning": "Gemini (gemini-3.5-flash): The transcript explicitly states that everyone from the team, including the new manager, is expected to attend."
+  },
+  {
+    "timestamp": "2026-11-11T22:20:09.695509",
+    "type": "listening",
+    "question": "Where will the meeting be held?",
+    "selected_option": "Room 305",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting will be held in room 305."
+  },
+  {
+    "timestamp": "2026-11-11T22:20:40.358614",
+    "type": "listening",
+    "question": "What will James do this afternoon?",
+    "selected_option": "Send meeting notes",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that James agrees to send the meeting notes this afternoon."
+  },
+  {
+    "timestamp": "2026-11-11T22:20:45.682622",
+    "type": "listening",
+    "question": "What did Alex write down?",
+    "selected_option": "The action items",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Alex wrote down the action items."
+  },
+  {
+    "timestamp": "2026-11-11T22:20:51.210207",
+    "type": "listening",
+    "question": "What does the client need by Friday?",
+    "selected_option": "A proposal",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the client needs a proposal by Friday."
+  },
+  {
+    "timestamp": "2026-11-11T22:20:56.309245",
+    "type": "listening",
+    "question": "What is John offering to do during the meeting?",
+    "selected_option": "Take notes",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): John explicitly states in the transcript that he can take notes during the meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:21:01.126377",
+    "type": "listening",
+    "question": "What will Mark do after the meeting?",
+    "selected_option": "Send out a meeting reminder",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Mark agrees to send out a reminder with the meeting details."
+  },
+  {
+    "timestamp": "2026-11-11T22:21:31.558265",
+    "type": "listening",
+    "question": "On which day is the marketing meeting scheduled?",
+    "selected_option": "Wednesday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the marketing meeting is scheduled for Wednesday."
+  },
+  {
+    "timestamp": "2026-11-11T22:21:36.558204",
+    "type": "listening",
+    "question": "What day is the team meeting scheduled for?",
+    "selected_option": "Friday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Alice explicitly mentions that the meeting is planned for Friday."
+  },
+  {
+    "timestamp": "2026-11-11T22:21:41.591308",
+    "type": "listening",
+    "question": "What time is the planning session scheduled for?",
+    "selected_option": "3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the planning session is at 3 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:21:53.124335",
+    "type": "listening",
+    "question": "When is the budget meeting scheduled according to Sarah?",
+    "selected_option": "Thursday at 10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for Thursday at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:21:57.940900",
+    "type": "listening",
+    "question": "What day is the project meeting scheduled for?",
+    "selected_option": "Tuesday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states the meeting is scheduled for Tuesday afternoon."
+  },
+  {
+    "timestamp": "2026-11-11T22:22:34.274397",
+    "type": "listening",
+    "question": "Why is the meeting with the client being postponed?",
+    "selected_option": "Due to a project issue",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that a sudden issue with the project requires immediate attention and leads to the postponement."
+  },
+  {
+    "timestamp": "2026-11-11T22:22:56.777121",
+    "type": "listening",
+    "question": "What is the executive asking the assistant to do?",
+    "selected_option": "Inform the board and reschedule",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The executive asked the assistant to inform the board of her absence and find alternative dates to reschedule the meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:23:08.880711",
+    "type": "listening",
+    "question": "What change is being discussed?",
+    "selected_option": "Rescheduling the meeting to a different day",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the meeting is being rescheduled from Friday to Monday."
+  },
+  {
+    "timestamp": "2026-11-11T22:23:24.060710",
+    "type": "listening",
+    "question": "Why is the manager calling?",
+    "selected_option": "To decline and reschedule a meeting",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The manager is calling because he cannot attend the scheduled meeting and wants to reschedule it for the following week."
+  },
+  {
+    "timestamp": "2026-11-11T22:23:35.325906",
+    "type": "listening",
+    "question": "What is the purpose of the call?",
+    "selected_option": "To decline a meeting",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The supervisor is calling to state that she cannot attend the Thursday meeting and needs to reschedule, which aligns with declining a meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:24:06.855019",
+    "type": "listening",
+    "question": "On which day is the meeting scheduled?",
+    "selected_option": "Friday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is happening on Friday."
+  },
+  {
+    "timestamp": "2026-11-11T22:24:11.988143",
+    "type": "listening",
+    "question": "What will be discussed in the meeting?",
+    "selected_option": "Project timelines",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the discussion will focus on project timelines and challenges."
+  },
+  {
+    "timestamp": "2026-11-11T22:24:17.479466",
+    "type": "listening",
+    "question": "Where will the meeting take place?",
+    "selected_option": "Room 203",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting will be in room 203."
+  },
+  {
+    "timestamp": "2026-11-11T22:24:22.439077",
+    "type": "listening",
+    "question": "What time is the strategy meeting?",
+    "selected_option": "4 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the strategy meeting is at 4 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:24:27.662585",
+    "type": "listening",
+    "question": "What time is the meeting scheduled for?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:25:10.420358",
+    "type": "listening",
+    "question": "When does the manager want to schedule the meeting?",
+    "selected_option": "Thursday at 3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the manager wants the meeting on Thursday at 3 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:25:15.786172",
+    "type": "listening",
+    "question": "When do they decide to have the meeting?",
+    "selected_option": "Monday afternoon at 2 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript states that James requested Monday afternoon and Lisa suggested 2 PM, which both agreed upon."
+  },
+  {
+    "timestamp": "2026-11-11T22:25:20.858265",
+    "type": "listening",
+    "question": "What time is the meeting scheduled for?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the project lead proposes 10 AM and Dave agrees to it."
+  },
+  {
+    "timestamp": "2026-11-11T22:25:26.155146",
+    "type": "listening",
+    "question": "On which day is the meeting scheduled?",
+    "selected_option": "Friday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting is scheduled for Friday at 11 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:25:31.024667",
+    "type": "listening",
+    "question": "What is the purpose of the meeting?",
+    "selected_option": "To discuss performance review",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the employee wants to discuss his performance review with Mr. Johnson."
+  },
+  {
+    "timestamp": "2026-11-11T22:26:00.939051",
+    "type": "listening",
+    "question": "When should the project milestones be updated?",
+    "selected_option": "By Friday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that updates should be done by Friday."
+  },
+  {
+    "timestamp": "2026-11-11T22:26:06.075577",
+    "type": "listening",
+    "question": "What is the project deadline?",
+    "selected_option": "The end of this month",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the project deadline is the end of this month."
+  },
+  {
+    "timestamp": "2026-11-11T22:26:11.634602",
+    "type": "listening",
+    "question": "When are the design revisions due?",
+    "selected_option": "Next Tuesday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the design revisions are due by next Tuesday."
+  },
+  {
+    "timestamp": "2026-11-11T22:26:16.651420",
+    "type": "listening",
+    "question": "When is the new product line set to launch?",
+    "selected_option": "June",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the new product line is to be launched in June."
+  },
+  {
+    "timestamp": "2026-11-11T22:26:27.547854",
+    "type": "listening",
+    "question": "When is the client presentation scheduled?",
+    "selected_option": "Wednesday at 10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the client presentation is scheduled for Wednesday at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:27:13.493468",
+    "type": "listening",
+    "question": "What has John already done to prepare for the meeting?",
+    "selected_option": "Prepared the agenda and sent invites",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that John has prepared the agenda and sent out the invites."
+  },
+  {
+    "timestamp": "2026-11-11T22:27:18.673581",
+    "type": "listening",
+    "question": "What should be done at the start of every meeting according to the team leader?",
+    "selected_option": "Review the agenda and set objectives",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the team leader emphasizes reviewing the agenda and setting objectives at the beginning of each meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:27:27.953905",
+    "type": "listening",
+    "question": "What should employees do if they cannot attend a meeting?",
+    "selected_option": "Inform their manager",
+    "reasoning": "Gemini (gemini-3.5-flash): The transcript explicitly states that employees are advised to inform their manager if they cannot attend a meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:27:34.250902",
+    "type": "listening",
+    "question": "How far in advance should meetings be scheduled according to the manager?",
+    "selected_option": "24 hours",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that meetings should be scheduled at least 24 hours in advance."
+  },
+  {
+    "timestamp": "2026-11-11T22:27:39.816603",
+    "type": "listening",
+    "question": "What does the senior manager ask the team member to do with their phone during meetings?",
+    "selected_option": "Turn it off",
+    "reasoning": "Fallback default"
+  },
+  {
+    "timestamp": "2026-11-11T22:28:10.015511",
+    "type": "listening",
+    "question": "Where is the weekly team meeting going to be held?",
+    "selected_option": "Small conference room",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the weekly team meeting is scheduled in the small conference room."
+  },
+  {
+    "timestamp": "2026-11-11T22:28:15.001170",
+    "type": "listening",
+    "question": "When is the budget review scheduled?",
+    "selected_option": "10:15 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the budget review is scheduled for 10:15 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:28:19.881567",
+    "type": "listening",
+    "question": "What time is the team training session scheduled for?",
+    "selected_option": "2:00 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the team training session is scheduled for 2:00 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:28:25.165618",
+    "type": "listening",
+    "question": "At what time is the meeting with the marketing team scheduled?",
+    "selected_option": "3:30 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting with the marketing team is at 3:30 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:28:30.233642",
+    "type": "listening",
+    "question": "What is the first meeting mentioned?",
+    "selected_option": "Sales meeting",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the sales meeting is the first meeting mentioned."
+  },
+  {
+    "timestamp": "2026-11-11T22:29:01.048627",
+    "type": "listening",
+    "question": "When was the meeting originally scheduled?",
+    "selected_option": "Tomorrow",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the meeting was originally scheduled for tomorrow."
+  },
+  {
+    "timestamp": "2026-11-11T22:29:07.647150",
+    "type": "listening",
+    "question": "Why does Emma want to meet Alex?",
+    "selected_option": "To finalize the report",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Emma wants to meet to finalize the report."
+  },
+  {
+    "timestamp": "2026-11-11T22:29:12.480442",
+    "type": "listening",
+    "question": "At what time is the urgent client meeting scheduled?",
+    "selected_option": "1 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the urgent client meeting is at 1 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:29:26.207135",
+    "type": "listening",
+    "question": "What time is the urgent team meeting?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the team meeting is at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:29:31.929200",
+    "type": "listening",
+    "question": "What time did John propose for the meeting?",
+    "selected_option": "3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that John proposed to meet at 3 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:30:01.864943",
+    "type": "listening",
+    "question": "Where is the briefing about the software update happening?",
+    "selected_option": "IT department's meeting room",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the briefing will take place in the IT department's meeting room."
+  },
+  {
+    "timestamp": "2026-11-11T22:30:07.125416",
+    "type": "listening",
+    "question": "What time does the briefing start?",
+    "selected_option": "9 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the briefing starts at 9 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:30:12.361288",
+    "type": "listening",
+    "question": "Where will the meeting be held?",
+    "selected_option": "Large meeting room",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the meeting will be held in the large meeting room."
+  },
+  {
+    "timestamp": "2026-11-11T22:30:19.495312",
+    "type": "listening",
+    "question": "What will be covered in the next briefing?",
+    "selected_option": "Progress of the current project",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the next briefing will cover the progress of the current project."
+  },
+  {
+    "timestamp": "2026-11-11T22:30:24.628953",
+    "type": "listening",
+    "question": "When is the project launch scheduled?",
+    "selected_option": "Next Monday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the project launch is scheduled for next Monday."
+  },
+  {
+    "timestamp": "2026-11-11T22:32:12.760430",
+    "type": "listening",
+    "question": "What did the client mention in their follow-up email?",
+    "selected_option": "The deadline has been extended",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the follow-up email from the client mentioned the deadline being extended."
+  },
+  {
+    "timestamp": "2026-11-11T22:32:17.710284",
+    "type": "listening",
+    "question": "What did the supervisor highlight in her follow-up email?",
+    "selected_option": "Key performance areas",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the supervisor mentioned key performance areas in the follow-up email."
+  },
+  {
+    "timestamp": "2026-11-11T22:32:28.833565",
+    "type": "listening",
+    "question": "What did the follow-up email from the manager include?",
+    "selected_option": "A reminder about the deadline",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the follow-up email included a reminder about the upcoming deadline."
+  },
+  {
+    "timestamp": "2026-11-11T22:32:33.592107",
+    "type": "listening",
+    "question": "What did the manager include in his follow-up email?",
+    "selected_option": "Project timeline and deliverables",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the follow-up email included the project timeline and deliverables."
+  },
+  {
+    "timestamp": "2026-11-11T22:32:46.244302",
+    "type": "listening",
+    "question": "What did Mr. Smith request in his follow-up email?",
+    "selected_option": "Feedback by Friday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that Mr. Smith asked for feedback by Friday in his follow-up email."
+  },
+  {
+    "timestamp": "2026-11-11T22:33:11.407944",
+    "type": "listening",
+    "question": "What is Sara planning to do after lunch?",
+    "selected_option": "Draft a reply to the email",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that Sara plans to draft a reply to the email after lunch."
+  },
+  {
+    "timestamp": "2026-11-11T22:33:26.475550",
+    "type": "listening",
+    "question": "What does Mark want from John and Alice?",
+    "selected_option": "The updated sales figures",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Mark asked for the updated sales figures."
+  },
+  {
+    "timestamp": "2026-11-11T22:33:31.540776",
+    "type": "listening",
+    "question": "What does Lisa plan to do by the end of the day?",
+    "selected_option": "Reply to the client's email",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Lisa plans to respond to the client's email by the end of the day."
+  },
+  {
+    "timestamp": "2026-11-11T22:33:37.139793",
+    "type": "listening",
+    "question": "What is Lucy currently doing?",
+    "selected_option": "Drafting a response to the customer",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Lucy is currently drafting a detailed response to the customer's email."
+  },
+  {
+    "timestamp": "2026-11-11T22:33:42.424794",
+    "type": "listening",
+    "question": "What did Tom do this morning?",
+    "selected_option": "Reply to Jane's email",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that Tom replied to Jane's email with the updated schedule this morning."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:06.910749",
+    "type": "listening",
+    "question": "When do they need to follow up with the client?",
+    "selected_option": "Tuesday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that they need to follow up with the client by next Tuesday."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:12.526153",
+    "type": "listening",
+    "question": "What did Nina do after sending the report?",
+    "selected_option": "Followed up with an email",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Nina followed up with an email after sending the report."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:17.856295",
+    "type": "listening",
+    "question": "Who should David follow up with after finishing the presentation slides?",
+    "selected_option": "The marketing team",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Sophie reminds David to follow up with the marketing team."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:22.676926",
+    "type": "listening",
+    "question": "When should the team send their project updates?",
+    "selected_option": "Friday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the team should send project updates by Friday."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:27.675191",
+    "type": "listening",
+    "question": "What should the employee do after completing the task?",
+    "selected_option": "Send an email",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the employee should send an email to confirm the delivery after completing the task."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:52.504703",
+    "type": "listening",
+    "question": "Why did Emma send a follow-up email?",
+    "selected_option": "To confirm receipt of the proposal",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Emma sent the email to ensure the client received the proposal."
+  },
+  {
+    "timestamp": "2026-11-11T22:34:57.907992",
+    "type": "listening",
+    "question": "When should you follow up on an important email according to the manager?",
+    "selected_option": "Within 48 hours",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states to follow up within 48 hours."
+  },
+  {
+    "timestamp": "2026-11-11T22:35:02.963272",
+    "type": "listening",
+    "question": "What is suggested to include in a follow-up email?",
+    "selected_option": "Polite and concise language",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly advises to keep follow-up emails polite and concise."
+  },
+  {
+    "timestamp": "2026-11-11T22:35:08.037559",
+    "type": "listening",
+    "question": "Why is a clear subject line important in a follow-up email?",
+    "selected_option": "It helps the recipient understand the purpose immediately",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that a clear subject line helps the recipient quickly understand the purpose of the email."
+  },
+  {
+    "timestamp": "2026-11-11T22:35:24.554662",
+    "type": "listening",
+    "question": "What is the time frame mentioned for sending a follow-up email?",
+    "selected_option": "Three days",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly mentions waiting three days before sending a follow-up email."
+  },
+  {
+    "timestamp": "2026-11-11T22:35:57.202692",
+    "type": "listening",
+    "question": "When will the new software update be available according to Liam?",
+    "selected_option": "Next Monday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the software update will be available starting next Monday."
+  },
+  {
+    "timestamp": "2026-11-11T22:36:02.241358",
+    "type": "listening",
+    "question": "What does John want to know about the email from Mark?",
+    "selected_option": "If they need to prepare a report",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that John wants to know if they need to prepare a report for the next meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:36:15.840341",
+    "type": "listening",
+    "question": "What information did Laura clarify from the email?",
+    "selected_option": "The deadline is the end of the month",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that Laura confirmed the tasks are due by the end of the month."
+  },
+  {
+    "timestamp": "2026-11-11T22:36:21.344618",
+    "type": "listening",
+    "question": "What time does Jake say the event starts?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the event starts at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:36:26.490908",
+    "type": "listening",
+    "question": "What did Sophie confirm about the client meeting?",
+    "selected_option": "The meeting is in Conference Room B",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Sophie clarifies the client meeting will be in Conference Room B."
+  },
+  {
+    "timestamp": "2026-11-11T22:36:51.452643",
+    "type": "listening",
+    "question": "What is the new time for the client meeting according to Sophia?",
+    "selected_option": "3 PM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sophia clearly states in the transcript that the meeting time was changed to 3 PM."
+  },
+  {
+    "timestamp": "2026-11-11T22:36:57.143028",
+    "type": "listening",
+    "question": "When did Mark specify the report should be submitted?",
+    "selected_option": "The 25th",
+    "reasoning": "Heuristic: Matched 'The 25th' directly in transcript explanation."
+  },
+  {
+    "timestamp": "2026-11-11T22:37:02.386950",
+    "type": "listening",
+    "question": "According to Ava, what time does the training session start?",
+    "selected_option": "10 AM",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Ava explicitly states that the training session begins at 10 AM."
+  },
+  {
+    "timestamp": "2026-11-11T22:37:07.303171",
+    "type": "listening",
+    "question": "When did the IT department say they would resolve the issue?",
+    "selected_option": "Tomorrow",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the issue would be resolved by tomorrow."
+  },
+  {
+    "timestamp": "2026-11-11T22:37:29.520858",
+    "type": "listening",
+    "question": "According to the conversation, when is the feedback actually due?",
+    "selected_option": "Wednesday",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Alice explicitly states that the feedback is due by Wednesday."
+  },
+  {
+    "timestamp": "2026-11-11T22:37:54.068774",
+    "type": "listening",
+    "question": "Why does Rob suggest personalizing the follow-up email?",
+    "selected_option": "To show attentiveness during the initial conversation.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Rob suggests personalizing the follow-up email because it indicates attentiveness to the initial conversation, thereby strengthening the relationship."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:07.667415",
+    "type": "listening",
+    "question": "What is a key focus in Alex's follow-up email strategy?",
+    "selected_option": "Emphasizing unique value propositions.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Alex's effective follow-up email strategy centers on reinforcing unique value propositions to capture the prospect's interest."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:12.867408",
+    "type": "listening",
+    "question": "According to Lisa, what should be included in the follow-up email?",
+    "selected_option": "An expression of gratitude and clarification of points.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Lisa explicitly emphasizes expressing gratitude for their time and clarifying points as the elements to be included in the follow-up email."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:18.336772",
+    "type": "listening",
+    "question": "What is the reason given for sending follow-up emails promptly?",
+    "selected_option": "To keep the conversation fresh in the recipient's mind.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that sending follow-up emails promptly helps keep the conversation fresh."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:23.468094",
+    "type": "listening",
+    "question": "What is Sarah's main reason for sending a follow-up email?",
+    "selected_option": "To recap the key points of the meeting.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sending a follow-up email is standard practice to recap the key points and action items discussed in a meeting."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:48.565256",
+    "type": "listening",
+    "question": "According to the conversation, which emails should Alex address first?",
+    "selected_option": "Project-related emails from the team lead",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Nina advises Alex to prioritize project-related emails from the team lead due to their importance."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:53.373365",
+    "type": "listening",
+    "question": "Which emails should Oliver read first according to Sophia's advice?",
+    "selected_option": "Emails from senior management or marked urgent",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sophia explicitly suggests prioritizing emails from senior management or those marked as urgent."
+  },
+  {
+    "timestamp": "2026-11-11T22:38:58.517910",
+    "type": "listening",
+    "question": "Which emails should be prioritized according to the discussion?",
+    "selected_option": "Client emails and project manager's emails",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states to prioritize emails from clients marked as urgent and those from the project manager."
+  },
+  {
+    "timestamp": "2026-11-11T22:39:12.249754",
+    "type": "listening",
+    "question": "Which emails does Jack suggest Eva to focus on first?",
+    "selected_option": "Emails marked high priority or from the CEO",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Jack explicitly advises Eva to prioritize emails marked as high priority or from the CEO."
+  },
+  {
+    "timestamp": "2026-11-11T22:39:18.069142",
+    "type": "listening",
+    "question": "What criteria does Mia use to prioritize her emails?",
+    "selected_option": "Emails with deadlines or flagged important by the manager",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Mia prioritizes emails with deadlines and those flagged as important by the manager."
+  },
+  {
+    "timestamp": "2026-11-11T22:39:42.416782",
+    "type": "listening",
+    "question": "When does Mia suggest Ethan should send the follow-up email?",
+    "selected_option": "On Thursday.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that Mia advises sending a follow-up on Thursday."
+  },
+  {
+    "timestamp": "2026-11-11T22:39:47.691954",
+    "type": "listening",
+    "question": "What is Sarah's approach to follow-up emails?",
+    "selected_option": "She waits for a few days before following up if there's no response.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Sarah follows up in a few days if she hasn't received a response."
+  },
+  {
+    "timestamp": "2026-11-11T22:39:53.201448",
+    "type": "listening",
+    "question": "What does Lily suggest about handling non-responsive clients?",
+    "selected_option": "To follow up with a gentle reminder.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Lily suggests a gentle nudge or reminder is effective, which corresponds to option 3."
+  },
+  {
+    "timestamp": "2026-11-11T22:39:58.334691",
+    "type": "listening",
+    "question": "What does Ava focus on in her follow-up emails?",
+    "selected_option": "Keeping them polite and concise.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Ava's emails are polite and to the point, which matches keeping them polite and concise."
+  },
+  {
+    "timestamp": "2026-11-11T22:40:04.097137",
+    "type": "listening",
+    "question": "What does Mark imply about his follow-up strategy?",
+    "selected_option": "He waits a few days before sending a follow-up.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Mark waits a couple of days before sending a reminder."
+  },
+  {
+    "timestamp": "2026-11-11T22:40:28.933159",
+    "type": "listening",
+    "question": "What is the employee's strategy to meet the deadline?",
+    "selected_option": "Focusing on critical tasks first",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the employee will focus on the most critical tasks first."
+  },
+  {
+    "timestamp": "2026-11-11T22:40:34.779554",
+    "type": "listening",
+    "question": "What needs to be submitted by next Friday according to the email?",
+    "selected_option": "The final project report",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that all work needing to be submitted by next Friday is the final submission, which corresponds to the final project report."
+  },
+  {
+    "timestamp": "2026-11-11T22:40:40.447051",
+    "type": "listening",
+    "question": "According to Linda, why is prioritizing tasks important?",
+    "selected_option": "The deadline is no longer flexible",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly mentions a lack of flexibility in the deadline, which matches the statement that the deadline is no longer flexible."
+  },
+  {
+    "timestamp": "2026-11-11T22:40:46.082874",
+    "type": "listening",
+    "question": "What strategy does the employee plan to use to handle deadline pressure?",
+    "selected_option": "Break down tasks into smaller parts",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the employee will manage stress by breaking down tasks into smaller parts."
+  },
+  {
+    "timestamp": "2026-11-11T22:40:50.947270",
+    "type": "listening",
+    "question": "Why is aligning deadlines with the marketing team important according to Sophie?",
+    "selected_option": "It is crucial for the launch",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sophie explicitly states that aligning deadlines is crucial for the project launch."
+  },
+  {
+    "timestamp": "2026-11-11T22:41:15.754635",
+    "type": "listening",
+    "question": "What did Mr. Johnson complain about in his email?",
+    "selected_option": "The delayed shipment",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that Mr. Johnson's complaint was about the delayed shipment."
+  },
+  {
+    "timestamp": "2026-11-11T22:41:30.079278",
+    "type": "listening",
+    "question": "What is important to remember when dealing with a complaint, according to the trainer?",
+    "selected_option": "Expressing empathy",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly emphasizes the importance of expressing empathy when dealing with a complaint."
+  },
+  {
+    "timestamp": "2026-11-11T22:41:40.845982",
+    "type": "listening",
+    "question": "What is the first step in responding to a complaint email according to the manager?",
+    "selected_option": "Acknowledging the issue",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that the first step is to acknowledge the issue."
+  },
+  {
+    "timestamp": "2026-11-11T22:41:48.879488",
+    "type": "listening",
+    "question": "What was the issue mentioned in the email exchange?",
+    "selected_option": "Defective product",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the issue was the defective product."
+  },
+  {
+    "timestamp": "2026-11-11T22:41:58.246179",
+    "type": "listening",
+    "question": "Why was the customer unhappy according to the representative?",
+    "selected_option": "They received the wrong item",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the customer received the wrong item, which caused their unhappiness."
+  },
+  {
+    "timestamp": "2026-11-11T22:42:32.740616",
+    "type": "listening",
+    "question": "What is Nina's main reason for using BCC in emails?",
+    "selected_option": "To ensure that the emails are colorful.",
+    "reasoning": "Fallback default"
+  },
+  {
+    "timestamp": "2026-11-11T22:42:37.812827",
+    "type": "listening",
+    "question": "Why do John and Rachel agree to CC the entire team?",
+    "selected_option": "To ensure no one feels left out or uninformed.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states they CC the entire team so everyone is informed and no one feels excluded."
+  },
+  {
+    "timestamp": "2026-11-11T22:42:42.994063",
+    "type": "listening",
+    "question": "What is the primary reason Mark suggests using BCC in an email?",
+    "selected_option": "To prevent recipients from seeing each other's email addresses.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Mark states that BCC is used to keep recipients hidden, meaning their email addresses are not visible to others."
+  },
+  {
+    "timestamp": "2026-11-11T22:42:47.960557",
+    "type": "listening",
+    "question": "Why does Sarah say their department uses CC frequently?",
+    "selected_option": "To maintain transparency among recipients.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sarah states that using CC helps maintain transparency by letting everyone know who received the information."
+  },
+  {
+    "timestamp": "2026-11-11T22:42:53.239088",
+    "type": "listening",
+    "question": "According to Sophie, why is it important to use CC in emails?",
+    "selected_option": "To track who is informed about what.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sophie emphasizes that using CC ensures people are kept informed, which aligns with tracking who is informed about what."
+  },
+  {
+    "timestamp": "2026-11-11T22:43:08.030487",
+    "type": "listening",
+    "question": "According to Sophie, why is it important to use CC in emails?",
+    "selected_option": "To track who is informed about what.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sophie emphasizes using CC to ensure people are kept informed, which aligns with tracking who has information."
+  },
+  {
+    "timestamp": "2026-11-11T22:43:16.001561",
+    "type": "listening",
+    "question": "Why does Sarah say their department uses CC frequently?",
+    "selected_option": "To maintain transparency among recipients.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): Sarah explicitly states that using CC helps maintain transparency by letting everyone know who has received the information."
+  },
+  {
+    "timestamp": "2026-11-11T22:43:32.822442",
+    "type": "listening",
+    "question": "What is Nina's main reason for using BCC in emails?",
+    "selected_option": "To send emails to a large group without revealing recipients' emails.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that Nina uses BCC to maintain the confidentiality of recipients' email addresses when sending to a large group."
+  },
+  {
+    "timestamp": "2026-11-11T22:43:40.699653",
+    "type": "listening",
+    "question": "Why do John and Rachel agree to CC the entire team?",
+    "selected_option": "To ensure no one feels left out or uninformed.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states they CC the team to ensure everyone is informed and no one feels excluded."
+  },
+  {
+    "timestamp": "2026-11-11T22:43:50.518267",
+    "type": "listening",
+    "question": "What is the primary reason Mark suggests using BCC in an email?",
+    "selected_option": "To prevent recipients from seeing each other's email addresses.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that BCC is used to keep recipients hidden from each other so their email addresses are not visible."
+  },
+  {
+    "timestamp": "2026-11-11T22:44:15.540866",
+    "type": "listening",
+    "question": "What is the recommended response time for emails according to the session?",
+    "selected_option": "24 hours",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that responding to emails within 24 hours is standard practice."
+  },
+  {
+    "timestamp": "2026-11-11T22:44:21.290456",
+    "type": "listening",
+    "question": "How should the tone of emails be adjusted when communicating with external clients?",
+    "selected_option": "Be more formal",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that a formal tone is necessary when communicating with external clients."
+  },
+  {
+    "timestamp": "2026-11-11T22:44:26.759198",
+    "type": "listening",
+    "question": "What is recommended for maintaining professionalism in emails?",
+    "selected_option": "Adding a salutation",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that adding a salutation at the beginning of an email is a basic professional etiquette."
+  },
+  {
+    "timestamp": "2026-11-11T22:44:31.696823",
+    "type": "listening",
+    "question": "What is the purpose of including a signature in every email?",
+    "selected_option": "To maintain clarity and professionalism",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that including a signature helps to maintain clarity and ensures professionalism."
+  },
+  {
+    "timestamp": "2026-11-11T22:44:37.557893",
+    "type": "listening",
+    "question": "According to the discussion, what should be avoided in the email subject line?",
+    "selected_option": "Using all caps",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that using all caps in email subjects is discouraged because it can be interpreted as shouting."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:02.446331",
+    "type": "listening",
+    "question": "How should the tone of a follow-up email be according to the guest?",
+    "selected_option": "Polite and professional",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that the guest highlights the importance of maintaining a polite and professional tone."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:07.440686",
+    "type": "listening",
+    "question": "What is the suggested time to wait before sending a follow-up email?",
+    "selected_option": "Three days",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly suggests waiting three days before sending a follow-up email."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:13.307663",
+    "type": "listening",
+    "question": "What should you include in a follow-up email according to the trainer?",
+    "selected_option": "A friendly opening and a summary of the original email",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening transcript explicitly states that you should include a friendly opening and a summary of the original email."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:19.644653",
+    "type": "listening",
+    "question": "What is a benefit of follow-up emails according to the keynote speaker?",
+    "selected_option": "They increase response rates",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The transcript explicitly states that follow-up emails can significantly increase response rates."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:27.460755",
+    "type": "listening",
+    "question": "Why is it important to follow up on emails according to the manager?",
+    "selected_option": "To keep the conversation going",
+    "reasoning": "Gemini (gemini-3.5-flash): The manager explicitly states that a follow-up is crucial to keep the conversation going."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:52.158808",
+    "type": "listening",
+    "question": "What is the likely purpose of the email with the subject 'Project Update Required'?",
+    "selected_option": "To request additional information.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the subject suggests a request for more information, which corresponds to option 2."
+  },
+  {
+    "timestamp": "2026-11-11T22:45:57.304314",
+    "type": "listening",
+    "question": "What does the subject 'Final Reminder: Action Needed' imply about the email's urgency?",
+    "selected_option": "It is the last reminder before a deadline.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the subject implies it is the last reminder before a deadline."
+  },
+  {
+    "timestamp": "2026-11-11T22:46:02.745017",
+    "type": "listening",
+    "question": "What does the subject 'Quarterly Report Review' suggest about the email's content?",
+    "selected_option": "It provides feedback on a report.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the subject 'Quarterly Report Review' suggests analysis and feedback, matching option 3."
+  },
+  {
+    "timestamp": "2026-11-11T22:46:07.910135",
+    "type": "listening",
+    "question": "What does the subject 'Urgent: Immediate Response Needed' imply about the email's content?",
+    "selected_option": "It contains critical information that needs quick attention.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the subject 'Urgent: Immediate Response Needed' requires a quick response, which matches the need for quick attention."
+  },
+  {
+    "timestamp": "2026-11-11T22:46:13.174478",
+    "type": "listening",
+    "question": "What does the subject 'Meeting Next Steps' primarily suggest?",
+    "selected_option": "Future actions to be taken after the meeting.",
+    "reasoning": "Gemini (gemini-3.5-flash-lite): The listening context explicitly states that the subject 'Meeting Next Steps' implies future actions following a meeting, matching option 2."
+  }
+]

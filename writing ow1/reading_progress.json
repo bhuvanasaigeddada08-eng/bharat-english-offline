@@ -1,0 +1,1332 @@
+[
+  {
+    "timestamp": "2026-11-11T16:56:04.006463",
+    "mode": "dry-run",
+    "question": "What must employees wear at all times on the premises?",
+    "proposed_answer": "A company hat",
+    "reasoning": "Heuristic: Matched key terms 'A company hat' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T16:56:08.469755",
+    "mode": "dry-run",
+    "question": "What should employees do to their work area?",
+    "proposed_answer": "Keep it clean and tidy",
+    "reasoning": "Heuristic: Matched key terms 'Keep it clean and tidy' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T16:56:12.874864",
+    "mode": "dry-run",
+    "question": "What time should employees arrive at work?",
+    "proposed_answer": "9:00 AM",
+    "reasoning": "Heuristic: Matched key terms '9:00 AM' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T16:56:17.214224",
+    "mode": "dry-run",
+    "question": "When is the lunch break scheduled?",
+    "proposed_answer": "12:30 PM to 1:30 PM",
+    "reasoning": "Heuristic: Matched key terms '12:30 PM to 1:30 PM' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T16:56:20.259909",
+    "mode": "dry-run",
+    "question": "How far in advance should employees inform their manager about taking a day off?",
+    "proposed_answer": "Two days",
+    "reasoning": "Heuristic: Matched key terms 'Two days' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T17:02:28.766275",
+    "mode": "dry-run",
+    "question": "What time should employees arrive at work?",
+    "proposed_answer": "9:00 AM",
+    "reasoning": "Gemini: The passage explicitly states that all employees must arrive at work by 9:00 AM from Monday to Friday."
+  },
+  {
+    "timestamp": "2026-11-11T17:03:20.159688",
+    "mode": "dry-run",
+    "question": "When is the lunch break scheduled?",
+    "proposed_answer": "12:30 PM to 1:30 PM",
+    "reasoning": "Gemini: The passage explicitly states that lunch breaks are from 12:30 PM to 1:30 PM."
+  },
+  {
+    "timestamp": "2026-11-11T17:03:26.762321",
+    "mode": "dry-run",
+    "question": "How far in advance should employees inform their manager about taking a day off?",
+    "proposed_answer": "Two days",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their manager at least two days in advance if they need to take a day off."
+  },
+  {
+    "timestamp": "2026-11-11T17:03:32.058025",
+    "mode": "dry-run",
+    "question": "What must employees wear at all times on the premises?",
+    "proposed_answer": "An ID badge",
+    "reasoning": "Gemini: The passage explicitly states that employees must wear their ID badge at all times while on the premises."
+  },
+  {
+    "timestamp": "2026-11-11T17:03:37.618650",
+    "mode": "dry-run",
+    "question": "What should employees do to their work area?",
+    "proposed_answer": "Keep it clean and tidy",
+    "reasoning": "Gemini: The passage explicitly states that employees should keep their work area clean and tidy."
+  },
+  {
+    "timestamp": "2026-11-11T17:07:58.920470",
+    "mode": "dry-run",
+    "question": "When is the lunch break scheduled?",
+    "proposed_answer": "12:30 PM to 1:30 PM",
+    "reasoning": "Gemini: The passage explicitly states that lunch breaks are from 12:30 PM to 1:30 PM."
+  },
+  {
+    "timestamp": "2026-11-11T17:08:03.854507",
+    "mode": "dry-run",
+    "question": "How far in advance should employees inform their manager about taking a day off?",
+    "proposed_answer": "Two days",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their manager at least two days in advance to take a day off."
+  },
+  {
+    "timestamp": "2026-11-11T17:08:08.454161",
+    "mode": "dry-run",
+    "question": "What must employees wear at all times on the premises?",
+    "proposed_answer": "An ID badge",
+    "reasoning": "Gemini: The passage explicitly states that employees must wear their ID badge at all times while on the premises."
+  },
+  {
+    "timestamp": "2026-11-11T17:08:13.801196",
+    "mode": "dry-run",
+    "question": "What should employees do to their work area?",
+    "proposed_answer": "Keep it clean and tidy",
+    "reasoning": "Gemini: The passage explicitly states that employees should remember to keep their work area clean and tidy."
+  },
+  {
+    "timestamp": "2026-11-11T17:08:38.384347",
+    "mode": "dry-run",
+    "question": "What time should employees arrive at work?",
+    "proposed_answer": "9:00 AM",
+    "reasoning": "Gemini: The passage explicitly states that all employees must arrive at work by 9:00 AM."
+  },
+  {
+    "timestamp": "2026-11-11T17:08:57.034809",
+    "mode": "dry-run",
+    "question": "How far in advance should employees inform their manager about taking a day off?",
+    "proposed_answer": "Two days",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their manager at least two days in advance for a day off."
+  },
+  {
+    "timestamp": "2026-11-11T17:09:02.972958",
+    "mode": "dry-run",
+    "question": "What must employees wear at all times on the premises?",
+    "proposed_answer": "An ID badge",
+    "reasoning": "Gemini: The passage explicitly states that employees must wear their ID badge at all times while on the premises."
+  },
+  {
+    "timestamp": "2026-11-11T17:19:08.538252",
+    "mode": "dry-run",
+    "question": "How can employees stay informed about safety procedures and updates?",
+    "proposed_answer": "By participating in training sessions",
+    "reasoning": "Gemini: The passage explicitly states that employees should participate in regular safety training sessions to stay informed about procedures and updates."
+  },
+  {
+    "timestamp": "2026-11-11T17:19:13.792847",
+    "mode": "dry-run",
+    "question": "What is the role of safety gear at the workplace?",
+    "proposed_answer": "To protect against accidents",
+    "reasoning": "Gemini: The passage states that it is important to follow safety rules, such as wearing appropriate gear, to prevent accidents."
+  },
+  {
+    "timestamp": "2026-11-11T17:19:18.952443",
+    "mode": "dry-run",
+    "question": "Whose responsibility is workplace safety according to the paragraph?",
+    "proposed_answer": "Everyone's",
+    "reasoning": "Gemini: The passage explicitly states that safety is everyone's responsibility."
+  },
+  {
+    "timestamp": "2026-11-11T17:19:45.767105",
+    "mode": "dry-run",
+    "question": "What should employees do when they find a hazard in the workplace?",
+    "proposed_answer": "Report it to their supervisor",
+    "reasoning": "Gemini: The passage explicitly states to report any hazards, like spills or broken equipment, to your supervisor immediately."
+  },
+  {
+    "timestamp": "2026-11-11T17:19:51.153357",
+    "mode": "dry-run",
+    "question": "Why is it important to keep your work area clean and organized?",
+    "proposed_answer": "To avoid trips and falls",
+    "reasoning": "Gemini: The passage explicitly states to keep your work area clean and organized to avoid trips and falls."
+  },
+  {
+    "timestamp": "2026-11-11T17:20:06.561677",
+    "mode": "dry-run",
+    "question": "Whose responsibility is workplace safety according to the paragraph?",
+    "proposed_answer": "Everyone's",
+    "reasoning": "Gemini: The passage explicitly states that safety is everyone's responsibility."
+  },
+  {
+    "timestamp": "2026-11-11T17:22:00.195823",
+    "mode": "dry-run",
+    "question": "What is allowed on 'Casual Friday'?",
+    "proposed_answer": "More relaxed clothing",
+    "reasoning": "Gemini: The passage explicitly states that on Fridays, more relaxed clothing is allowed."
+  },
+  {
+    "timestamp": "2026-11-11T17:22:06.245142",
+    "mode": "dry-run",
+    "question": "Why does the company have a dress code policy?",
+    "proposed_answer": "To maintain a professional image",
+    "reasoning": "Gemini: The passage explicitly states that the dress code policy is in place to help the company maintain a professional image."
+  },
+  {
+    "timestamp": "2026-11-11T17:24:00.743222",
+    "mode": "dry-run",
+    "question": "Which of the following is NOT considered appropriate for men according to the dress code?",
+    "proposed_answer": "T-shirts",
+    "reasoning": "Gemini: The passage explicitly states that t-shirts are examples of clothing that is too casual and not acceptable under the business casual policy."
+  },
+  {
+    "timestamp": "2026-11-11T17:24:07.244313",
+    "mode": "dry-run",
+    "question": "What type of clothing is expected from employees according to the dress code policy?",
+    "proposed_answer": "Business casual clothing",
+    "reasoning": "Gemini: The passage explicitly states that employees are expected to wear business casual clothing."
+  },
+  {
+    "timestamp": "2026-11-11T17:24:35.474635",
+    "mode": "dry-run",
+    "question": "What type of clothing is mentioned as appropriate for women?",
+    "proposed_answer": "Blouses and dresses",
+    "reasoning": "Gemini: The passage explicitly states that for women, blouses, skirts, or dresses are considered appropriate."
+  },
+  {
+    "timestamp": "2026-11-11T17:25:09.732764",
+    "mode": "dry-run",
+    "question": "What type of clothing is mentioned as appropriate for women?",
+    "proposed_answer": "Blouses and dresses",
+    "reasoning": "Gemini: The passage explicitly states that for women, blouses, skirts, or dresses are considered appropriate attire."
+  },
+  {
+    "timestamp": "2026-11-11T17:25:18.730954",
+    "mode": "dry-run",
+    "question": "Which of the following is NOT considered appropriate for men according to the dress code?",
+    "proposed_answer": "T-shirts",
+    "reasoning": "Gemini: The passage explicitly states that t-shirts are not allowed as they are considered too casual."
+  },
+  {
+    "timestamp": "2026-11-11T17:25:26.310698",
+    "mode": "dry-run",
+    "question": "Why does the company have a dress code policy?",
+    "proposed_answer": "To maintain a professional image",
+    "reasoning": "Gemini: The passage explicitly states that the dress code policy helps the company maintain a professional image."
+  },
+  {
+    "timestamp": "2026-11-11T17:25:36.769908",
+    "mode": "dry-run",
+    "question": "What is allowed on 'Casual Friday'?",
+    "proposed_answer": "More relaxed clothing",
+    "reasoning": "Gemini: The passage explicitly states that on 'Casual Friday,' more relaxed clothing is allowed."
+  },
+  {
+    "timestamp": "2026-11-11T17:25:46.036534",
+    "mode": "dry-run",
+    "question": "What type of clothing is expected from employees according to the dress code policy?",
+    "proposed_answer": "Business casual clothing",
+    "reasoning": "Gemini: The passage explicitly states that employees are expected to wear business casual clothing."
+  },
+  {
+    "timestamp": "2026-11-11T17:26:02.128603",
+    "mode": "dry-run",
+    "question": "What is allowed on 'Casual Friday'?",
+    "proposed_answer": "More relaxed clothing",
+    "reasoning": "Gemini: The passage explicitly states that on Fridays, more relaxed clothing is allowed, provided it remains neat and appropriate for the office."
+  },
+  {
+    "timestamp": "2026-11-11T17:26:07.992182",
+    "mode": "dry-run",
+    "question": "What type of clothing is mentioned as appropriate for women?",
+    "proposed_answer": "Blouses and dresses",
+    "reasoning": "Gemini: The passage explicitly states that blouses, skirts, or dresses are considered appropriate attire for women."
+  },
+  {
+    "timestamp": "2026-11-11T17:26:13.689699",
+    "mode": "dry-run",
+    "question": "What type of clothing is expected from employees according to the dress code policy?",
+    "proposed_answer": "Business casual clothing",
+    "reasoning": "Gemini: The passage explicitly states that employees are expected to wear business casual clothing."
+  },
+  {
+    "timestamp": "2026-11-11T17:26:24.241023",
+    "mode": "dry-run",
+    "question": "Why does the company have a dress code policy?",
+    "proposed_answer": "To maintain a professional image",
+    "reasoning": "Gemini: The passage explicitly states that the dress code policy helps the company maintain a professional image."
+  },
+  {
+    "timestamp": "2026-11-11T17:28:13.158115",
+    "mode": "dry-run",
+    "question": "Why is punctuality emphasized in the workplace conduct policy?",
+    "proposed_answer": "To show respect for others' time",
+    "reasoning": "Gemini: The passage explicitly states that arriving on time for meetings and work hours shows respect for others' time."
+  },
+  {
+    "timestamp": "2026-11-11T17:28:27.912748",
+    "mode": "dry-run",
+    "question": "What is one of the key expectations regarding time management in the workplace conduct policy?",
+    "proposed_answer": "Arriving on time for meetings",
+    "reasoning": "Gemini: The passage explicitly states that punctuality, specifically arriving on time for meetings and work hours, is crucial."
+  },
+  {
+    "timestamp": "2026-11-11T17:29:08.010838",
+    "mode": "dry-run",
+    "question": "What aspect of teamwork is highlighted in the workplace conduct policy?",
+    "proposed_answer": "Sharing responsibilities",
+    "reasoning": "Gemini: The passage explicitly states that employees should share responsibilities to achieve common goals as part of effective teamwork."
+  },
+  {
+    "timestamp": "2026-11-11T17:29:37.100885",
+    "mode": "dry-run",
+    "question": "How should communication be conducted according to the workplace conduct policy?",
+    "proposed_answer": "Clearly and courteously",
+    "reasoning": "Gemini: The passage explicitly states that communication should be clear, courteous, and concise."
+  },
+  {
+    "timestamp": "2026-11-11T17:29:43.322314",
+    "mode": "dry-run",
+    "question": "What should employees do if they have an issue with a colleague according to the policy?",
+    "proposed_answer": "Address directly with the concerned party",
+    "reasoning": "Heuristic: Matched key terms 'Address directly with the concerned party' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T17:29:58.322921",
+    "mode": "dry-run",
+    "question": "What should employees do if they have an issue with a colleague according to the policy?",
+    "proposed_answer": "Address directly with the concerned party",
+    "reasoning": "Gemini: The passage explicitly states that employees should address issues directly with the concerned party."
+  },
+  {
+    "timestamp": "2026-11-11T17:30:03.170735",
+    "mode": "dry-run",
+    "question": "What aspect of teamwork is highlighted in the workplace conduct policy?",
+    "proposed_answer": "Sharing responsibilities",
+    "reasoning": "Gemini: The passage explicitly states that employees should share responsibilities to achieve common goals as part of effective teamwork."
+  },
+  {
+    "timestamp": "2026-11-11T17:30:08.086680",
+    "mode": "dry-run",
+    "question": "How should communication be conducted according to the workplace conduct policy?",
+    "proposed_answer": "Clearly and courteously",
+    "reasoning": "Gemini: The passage explicitly states that communication should be clear, courteous, and concise."
+  },
+  {
+    "timestamp": "2026-11-11T17:30:23.963593",
+    "mode": "dry-run",
+    "question": "Why is punctuality emphasized in the workplace conduct policy?",
+    "proposed_answer": "To show respect for others' time",
+    "reasoning": "Gemini: The passage explicitly states that arriving on time for meetings and work hours shows respect for others' time."
+  },
+  {
+    "timestamp": "2026-11-11T17:31:06.114298",
+    "mode": "dry-run",
+    "question": "What is one of the key expectations regarding time management in the workplace conduct policy?",
+    "proposed_answer": "Arriving on time for meetings",
+    "reasoning": "Gemini: The passage explicitly states that punctuality, specifically arriving on time for meetings and work hours, is a crucial expectation."
+  },
+  {
+    "timestamp": "2026-11-11T17:31:26.497518",
+    "mode": "dry-run",
+    "question": "What should employees do if they have an issue with a colleague according to the policy?",
+    "proposed_answer": "Address directly with the concerned party",
+    "reasoning": "Gemini: The passage explicitly states that employees should address issues directly with the concerned party."
+  },
+  {
+    "timestamp": "2026-11-11T17:32:38.274431",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that for extended absences, a doctor\u2019s note may be required to confirm the illness."
+  },
+  {
+    "timestamp": "2026-11-11T17:32:44.373168",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage states that consistent tardiness or unreported absences could result in disciplinary action, including a written warning or termination."
+  },
+  {
+    "timestamp": "2026-11-11T17:32:56.559086",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that employees should familiarize themselves with these procedures to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:01.389267",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage explicitly states that if an employee is unable to reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:06.142513",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The policy states that employees must inform their supervisor and HR within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:21.938317",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that for extended absences, a doctor\u2019s note may be required to confirm the illness."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:26.906788",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that employees should familiarize themselves with these procedures to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:31.934080",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their supervisor and HR within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:39.338330",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage states that if an employee is unable to reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:33:48.969622",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action."
+  },
+  {
+    "timestamp": "2026-11-11T17:34:03.910516",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their supervisor and Human Resources within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:34:09.120252",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that for extended absences, a doctor\u2019s note may be required to confirm the illness."
+  },
+  {
+    "timestamp": "2026-11-11T17:38:30.965967",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that a doctor\u2019s note may be required to confirm the illness for extended absences."
+  },
+  {
+    "timestamp": "2026-11-11T17:38:35.739455",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage explicitly states that if an employee is unable to reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:38:40.640446",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action, including a written warning or termination."
+  },
+  {
+    "timestamp": "2026-11-11T17:38:45.486112",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that familiarity with procedures is crucial to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T17:38:50.950848",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their supervisor and HR within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:39:06.003433",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action."
+  },
+  {
+    "timestamp": "2026-11-11T17:53:51.604917",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that a doctor\u2019s note may be required to confirm the illness for extended absences."
+  },
+  {
+    "timestamp": "2026-11-11T17:53:57.016212",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their supervisor and HR within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:54:02.401407",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The policy states that if an employee is unable to reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:54:07.717481",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that employees should familiarize themselves with these procedures to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T17:54:12.468359",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action."
+  },
+  {
+    "timestamp": "2026-11-11T17:54:46.536202",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage explicitly states that if an employee is unable to reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:54:52.729598",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their supervisor and HR within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:54:58.779300",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that familiarizing oneself with these procedures is crucial to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:04.468935",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that for extended absences, a doctor\u2019s note may be required to confirm the illness."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:09.930862",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage states that consistent tardiness or unreported absences could result in disciplinary action, including a written warning or termination."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:27.019621",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that employees should familiarize themselves with these procedures to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:34.142770",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that a doctor\u2019s note may be required to confirm the illness for extended absences."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:39.751628",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage explicitly states that employees must inform their supervisor and Human Resources within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:46.201347",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action."
+  },
+  {
+    "timestamp": "2026-11-11T17:55:51.998168",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage explicitly states that if an employee is unable to reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:56:07.198050",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage explicitly states that if an employee cannot reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T17:56:20.968297",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action."
+  },
+  {
+    "timestamp": "2026-11-11T17:56:26.165507",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that for extended absences, a doctor\u2019s note may be required to confirm the illness."
+  },
+  {
+    "timestamp": "2026-11-11T17:56:31.761407",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Gemini: The passage states that employees must inform their supervisor and Human Resources within the first hour of their scheduled shift."
+  },
+  {
+    "timestamp": "2026-11-11T17:56:37.161971",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that familiarizing oneself with the procedures is crucial to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T18:01:56.427783",
+    "mode": "dry-run",
+    "question": "What should an employee do if they cannot reach their supervisor by phone?",
+    "proposed_answer": "Leave a voicemail and send an email",
+    "reasoning": "Gemini: The passage explicitly states that if an employee cannot reach their supervisor, they should leave a voicemail and follow up with an email."
+  },
+  {
+    "timestamp": "2026-11-11T18:02:01.804984",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to familiarize themselves with the attendance procedures?",
+    "proposed_answer": "To maintain a clear record and support team productivity",
+    "reasoning": "Gemini: The passage explicitly states that employees should familiarize themselves with these procedures to maintain a clear record and support team productivity."
+  },
+  {
+    "timestamp": "2026-11-11T18:02:06.824652",
+    "mode": "dry-run",
+    "question": "What could result from consistent tardiness or unreported absences?",
+    "proposed_answer": "Disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that consistent tardiness or unreported absences could result in disciplinary action."
+  },
+  {
+    "timestamp": "2026-11-11T18:02:24.657160",
+    "mode": "dry-run",
+    "question": "When should an employee report their illness to the company?",
+    "proposed_answer": "Within the first hour of their shift",
+    "reasoning": "Heuristic: Matched key terms 'Within the first hour of their shift' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T18:02:30.173596",
+    "mode": "dry-run",
+    "question": "What might be required for extended absences due to illness?",
+    "proposed_answer": "A doctor's note",
+    "reasoning": "Gemini: The passage explicitly states that for extended absences, a doctor\u2019s note may be required to confirm the illness."
+  },
+  {
+    "timestamp": "2026-11-11T18:03:03.770408",
+    "mode": "dry-run",
+    "question": "What is the main purpose of the rest breaks according to the policy?",
+    "proposed_answer": "To enable employees to recharge and maintain productivity",
+    "reasoning": "Gemini: The passage explicitly states that rest breaks are intended to allow employees to recharge and maintain productivity."
+  },
+  {
+    "timestamp": "2026-11-11T18:03:08.537299",
+    "mode": "dry-run",
+    "question": "How many breaks in total are full-time employees entitled to during their workday?",
+    "proposed_answer": "One 30-minute break and two 15-minute breaks",
+    "reasoning": "Gemini: The passage states that full-time employees are entitled to a 30-minute lunch break and two 15-minute rest breaks."
+  },
+  {
+    "timestamp": "2026-11-11T18:03:13.835478",
+    "mode": "dry-run",
+    "question": "How many rest breaks are part-time employees entitled to?",
+    "proposed_answer": "One 15-minute rest break",
+    "reasoning": "Gemini: The passage explicitly states that part-time employees who work less than six hours a day are granted one 15-minute rest break."
+  },
+  {
+    "timestamp": "2026-11-11T18:04:42.799449",
+    "mode": "dry-run",
+    "question": "Are employees required to stay at their workstations during breaks?",
+    "proposed_answer": "No, they are encouraged to step away",
+    "reasoning": "Gemini: The passage explicitly states that employees are encouraged to step away from their workstations to fully benefit from their breaks."
+  },
+  {
+    "timestamp": "2026-11-11T18:04:48.367055",
+    "mode": "dry-run",
+    "question": "Under what condition can the lunch break time be adjusted?",
+    "proposed_answer": "With prior approval from a supervisor",
+    "reasoning": "Gemini: The passage explicitly states that lunch breaks can be adjusted based on work demands with prior approval from a supervisor."
+  },
+  {
+    "timestamp": "2026-11-11T18:05:27.998607",
+    "mode": "dry-run",
+    "question": "Which activity is NOT prohibited by the company's internet usage policy?",
+    "proposed_answer": "Accessing company emails",
+    "reasoning": "Gemini: The passage explicitly states that employees are permitted to access company emails."
+  },
+  {
+    "timestamp": "2026-11-11T18:06:17.936454",
+    "mode": "dry-run",
+    "question": "What might happen if an employee violates the internet usage policy?",
+    "proposed_answer": "They are subject to disciplinary action",
+    "reasoning": "Gemini: The passage explicitly states that employees are subject to disciplinary action if they violate the policy."
+  },
+  {
+    "timestamp": "2026-11-11T18:07:16.106185",
+    "mode": "dry-run",
+    "question": "What is one of the main goals of the company's internet usage policy?",
+    "proposed_answer": "To ensure employees use online resources responsibly",
+    "reasoning": "Gemini: The passage explicitly states the policy is designed to ensure employees use online resources responsibly and productively."
+  },
+  {
+    "timestamp": "2026-11-11T18:07:22.460654",
+    "mode": "dry-run",
+    "question": "Why does the company restrict certain online activities at work?",
+    "proposed_answer": "To maximize work efficiency and protect company data",
+    "reasoning": "Gemini: The passage explicitly states that the policy aims to maximize work efficiency and protect company data."
+  },
+  {
+    "timestamp": "2026-11-11T18:07:30.467662",
+    "mode": "dry-run",
+    "question": "Which of the following activities is allowed according to the company's internet usage policy?",
+    "proposed_answer": "Streaming entertainment videos",
+    "reasoning": "Heuristic: Matched key terms 'Streaming entertainment videos' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T18:21:34.530867",
+    "mode": "dry-run",
+    "question": "Why is it important for employees to handle company data responsibly?",
+    "proposed_answer": "To maintain a competitive edge",
+    "reasoning": "Gemini: The passage explicitly states that protecting sensitive information helps maintain the company's competitive edge."
+  },
+  {
+    "timestamp": "2026-11-11T18:23:32.307034",
+    "mode": "dry-run",
+    "question": "How does protecting confidential information help the company according to the paragraph?",
+    "proposed_answer": "By fostering trust with clients",
+    "reasoning": "Gemini: The passage explicitly states that protecting information fosters trust between the company and its clients."
+  },
+  {
+    "timestamp": "2026-11-11T18:23:37.794667",
+    "mode": "dry-run",
+    "question": "What is the main purpose of the company's confidentiality policy?",
+    "proposed_answer": "To protect sensitive information from unauthorized disclosure",
+    "reasoning": "Gemini: The passage explicitly states the policy is designed to protect sensitive information from unauthorized disclosure."
+  },
+  {
+    "timestamp": "2026-11-11T18:23:44.079983",
+    "mode": "dry-run",
+    "question": "Which of the following is NOT mentioned as part of the information that should be protected?",
+    "proposed_answer": "Employee salaries",
+    "reasoning": "Gemini: The passage explicitly mentions trade secrets, client information, and internal communications, but does not mention employee salaries."
+  },
+  {
+    "timestamp": "2026-11-11T18:23:56.224660",
+    "mode": "dry-run",
+    "question": "What could be a possible consequence of unauthorized sharing of confidential data?",
+    "proposed_answer": "Legal action and damage to reputation",
+    "reasoning": "Gemini: The passage explicitly states that unauthorized sharing of confidential data can lead to serious consequences, including legal action and damage to the company's reputation."
+  },
+  {
+    "timestamp": "2026-11-11T18:24:30.525278",
+    "mode": "dry-run",
+    "question": "How many personal days are employees entitled to each year?",
+    "proposed_answer": "5 days",
+    "reasoning": "Gemini: The passage explicitly states that employees are entitled to 5 personal days per year."
+  },
+  {
+    "timestamp": "2026-11-11T18:24:36.577030",
+    "mode": "dry-run",
+    "question": "Can employees carry over unused vacation leave to the next year?",
+    "proposed_answer": "Yes, but only up to 5 days",
+    "reasoning": "Gemini: The policy states that employees are allowed to carry over a maximum of 5 unused leave days to the next year."
+  },
+  {
+    "timestamp": "2026-11-11T18:24:42.558561",
+    "mode": "dry-run",
+    "question": "How many paid vacation days are full-time employees entitled to each year?",
+    "proposed_answer": "20 days",
+    "reasoning": "Gemini: The passage explicitly states that all full-time employees are entitled to 20 days of paid vacation leave per year."
+  },
+  {
+    "timestamp": "2026-11-11T18:24:53.851878",
+    "mode": "dry-run",
+    "question": "Who decides if the leave requests will be approved?",
+    "proposed_answer": "The manager",
+    "reasoning": "Gemini: The passage states that approval is subject to managerial discretion."
+  },
+  {
+    "timestamp": "2026-11-11T18:24:58.706243",
+    "mode": "dry-run",
+    "question": "What must employees do to have their leave approved?",
+    "proposed_answer": "Submit requests four weeks in advance",
+    "reasoning": "Gemini: The passage explicitly states that employees must submit their leave requests at least four weeks in advance."
+  },
+  {
+    "timestamp": "2026-11-11T18:25:33.324426",
+    "mode": "dry-run",
+    "question": "When are employees required to submit their weekly status reports?",
+    "proposed_answer": "Every Friday by 5:00 PM.",
+    "reasoning": "Gemini: The passage explicitly states that employees are required to submit a weekly status report every Friday by 5:00 PM."
+  },
+  {
+    "timestamp": "2026-11-11T18:25:39.111230",
+    "mode": "dry-run",
+    "question": "Who should employees contact if they have questions about the new policy?",
+    "proposed_answer": "The HR department.",
+    "reasoning": "Gemini: The passage explicitly states that employees should reach out to the HR department if they have questions or need further clarification."
+  },
+  {
+    "timestamp": "2026-11-11T18:25:44.671211",
+    "mode": "dry-run",
+    "question": "What should the weekly status report include according to the memo?",
+    "proposed_answer": "Updates on current projects, challenges faced, and planned tasks.",
+    "reasoning": "Gemini: The passage explicitly states that the report should include updates on current projects, challenges faced, and planned tasks for the upcoming week."
+  },
+  {
+    "timestamp": "2026-11-11T18:28:50.618730",
+    "mode": "dry-run",
+    "question": "What is the main purpose of the new policy update mentioned in the memo?",
+    "proposed_answer": "To enhance communication and alignment among team members.",
+    "reasoning": "Gemini: The passage explicitly states that the purpose of the policy is to enhance communication and ensure that all team members are aligned with company goals."
+  },
+  {
+    "timestamp": "2026-11-11T18:28:55.751630",
+    "mode": "dry-run",
+    "question": "Who should employees contact if they have questions about the new policy?",
+    "proposed_answer": "The HR department.",
+    "reasoning": "Gemini: The passage explicitly states that employees should reach out to the HR department if they have questions or need further clarification."
+  },
+  {
+    "timestamp": "2026-11-11T18:29:01.219574",
+    "mode": "dry-run",
+    "question": "When are employees required to submit their weekly status reports?",
+    "proposed_answer": "Every Friday by 5:00 PM.",
+    "reasoning": "Gemini: The passage explicitly states that employees are required to submit a weekly status report every Friday by 5:00 PM."
+  },
+  {
+    "timestamp": "2026-11-11T18:29:07.818232",
+    "mode": "dry-run",
+    "question": "What is attached to the memo that employees need to review?",
+    "proposed_answer": "A template for the weekly status report.",
+    "reasoning": "Gemini: The passage explicitly instructs employees to familiarize themselves with the new template attached to the memo for the weekly status report."
+  },
+  {
+    "timestamp": "2026-11-11T18:29:14.618061",
+    "mode": "dry-run",
+    "question": "What should the weekly status report include according to the memo?",
+    "proposed_answer": "Updates on current projects, challenges faced, and planned tasks.",
+    "reasoning": "Gemini: The passage explicitly states that the report should include updates on current projects, challenges faced, and planned tasks for the upcoming week."
+  },
+  {
+    "timestamp": "2026-11-11T18:29:49.052269",
+    "mode": "dry-run",
+    "question": "If an employee needs to take a sudden day off due to an emergency, which policy would they most likely refer to?",
+    "proposed_answer": "Leave of Absence Policy",
+    "reasoning": "Gemini: The Leave of Absence Policy specifically mentions that the advance notice requirement does not apply in emergencies."
+  },
+  {
+    "timestamp": "2026-11-11T18:30:00.516941",
+    "mode": "dry-run",
+    "question": "What policy should an employee check if they are unsure about what to wear to work?",
+    "proposed_answer": "Dress Code Policy",
+    "reasoning": "Gemini: The passage states that the 'Dress Code Policy' mandates business casual attire during office hours."
+  },
+  {
+    "timestamp": "2026-11-11T18:30:07.634170",
+    "mode": "dry-run",
+    "question": "Which policy is relevant if an employee wants to work from home?",
+    "proposed_answer": "Remote Work Policy",
+    "reasoning": "Gemini: The passage explicitly states that the 'Remote Work Policy' allows employees to work from home upon receiving approval from their manager."
+  },
+  {
+    "timestamp": "2026-11-11T18:30:13.667684",
+    "mode": "dry-run",
+    "question": "Which policy requires prior approval from a manager?",
+    "proposed_answer": "Remote Work Policy",
+    "reasoning": "Gemini: The passage explicitly states that the Remote Work Policy allows employees to work from home upon receiving approval from their manager."
+  },
+  {
+    "timestamp": "2026-11-11T18:30:18.455272",
+    "mode": "dry-run",
+    "question": "For what type of situation would an employee need to submit a form two weeks in advance?",
+    "proposed_answer": "Applying for a leave of absence",
+    "reasoning": "Gemini: The 'Leave of Absence Policy' explicitly requires employees to submit a leave request form two weeks in advance, except in emergencies."
+  },
+  {
+    "timestamp": "2026-11-11T18:31:00.748513",
+    "mode": "dry-run",
+    "question": "What is the new total number of annual leave days employees can take?",
+    "proposed_answer": "20 days",
+    "reasoning": "Heuristic: Matched key terms '20 days' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T18:31:08.181458",
+    "mode": "dry-run",
+    "question": "How many unused leave days can employees carry over to the next year under the new policy?",
+    "proposed_answer": "5 days",
+    "reasoning": "Gemini: The passage explicitly states that the carryover of unused leave days is now limited to 5 days."
+  },
+  {
+    "timestamp": "2026-11-11T18:31:13.633709",
+    "mode": "dry-run",
+    "question": "What is the primary reason given for the policy change regarding carryover of leave days?",
+    "proposed_answer": "To encourage regular breaks and a healthy work-life balance",
+    "reasoning": "Gemini: The passage states that the change is intended to encourage team members to take regular breaks and ensure a healthy work-life balance."
+  },
+  {
+    "timestamp": "2026-11-11T18:31:19.898482",
+    "mode": "dry-run",
+    "question": "By when must leave requests be submitted according to the new policy?",
+    "proposed_answer": "Two weeks in advance",
+    "reasoning": "Gemini: The passage explicitly states that leave requests must be submitted at least two weeks in advance through the HR portal."
+  },
+  {
+    "timestamp": "2026-11-11T18:31:28.032400",
+    "mode": "dry-run",
+    "question": "Who should employees contact if they have questions about the new policy?",
+    "proposed_answer": "The HR department",
+    "reasoning": "Gemini: The passage explicitly states that employees should contact the HR department if they have any questions regarding the policy changes."
+  },
+  {
+    "timestamp": "2026-11-11T18:32:03.100607",
+    "mode": "dry-run",
+    "question": "Why was the remote work policy adjusted?",
+    "proposed_answer": "To improve team collaboration",
+    "reasoning": "Heuristic: Matched key terms 'To improve team collaboration' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T18:32:09.167705",
+    "mode": "dry-run",
+    "question": "What does the company encourage employees to do to manage work-life balance?",
+    "proposed_answer": "Use flexible scheduling options",
+    "reasoning": "Gemini: The passage explicitly states that employees are encouraged to use the company\u2019s flexible scheduling options to manage their work-life balance effectively."
+  },
+  {
+    "timestamp": "2026-11-11T18:32:14.230359",
+    "mode": "dry-run",
+    "question": "What did the HR department remind employees to do?",
+    "proposed_answer": "Review policy updates regularly",
+    "reasoning": "Gemini: The passage explicitly states that the HR department reminded employees to review the policy updates regularly to stay informed."
+  },
+  {
+    "timestamp": "2026-11-11T18:32:19.665467",
+    "mode": "dry-run",
+    "question": "How many days a week are employees currently allowed to work from home?",
+    "proposed_answer": "Two days",
+    "reasoning": "Gemini: The updated policy on the company intranet explicitly states that employees are only permitted to work from home two days a week."
+  },
+  {
+    "timestamp": "2026-11-11T18:32:24.598662",
+    "mode": "dry-run",
+    "question": "Who raised a concern about the remote work policy?",
+    "proposed_answer": "An employee",
+    "reasoning": "Gemini: The passage explicitly states that an employee raised a concern regarding the company's remote work policy."
+  },
+  {
+    "timestamp": "2026-11-11T18:32:57.929182",
+    "mode": "dry-run",
+    "question": "Which of the following is mandatory for employees while on the premises?",
+    "proposed_answer": "Wearing identification badges",
+    "reasoning": "Gemini: The passage explicitly states that all employees must wear their identification badges at all times while on the premises."
+  },
+  {
+    "timestamp": "2026-11-11T18:33:03.162450",
+    "mode": "dry-run",
+    "question": "What is the main purpose of following the workplace rules mentioned in the paragraph?",
+    "proposed_answer": "To ensure a safe and productive environment",
+    "reasoning": "Gemini: The passage explicitly states that complying with these rules ensures a safe and productive environment for everyone."
+  },
+  {
+    "timestamp": "2026-11-11T18:33:08.080075",
+    "mode": "dry-run",
+    "question": "What should employees do if they encounter hazardous materials?",
+    "proposed_answer": "Report to the safety officer",
+    "reasoning": "Gemini: The passage explicitly states that any hazardous materials must be reported immediately to the safety officer."
+  },
+  {
+    "timestamp": "2026-11-11T18:33:13.028266",
+    "mode": "dry-run",
+    "question": "What is displayed on each floor to assist in emergencies?",
+    "proposed_answer": "An evacuation plan",
+    "reasoning": "Gemini: The passage explicitly states that in case of an emergency, employees should follow the evacuation plan displayed on each floor."
+  },
+  {
+    "timestamp": "2026-11-11T18:33:21.481019",
+    "mode": "dry-run",
+    "question": "Where can employees use personal electronic devices during work hours?",
+    "proposed_answer": "In the break areas",
+    "reasoning": "Gemini: The passage explicitly states that the use of personal electronic devices during work hours is restricted to designated break areas."
+  },
+  {
+    "timestamp": "2026-11-11T18:36:54.093885",
+    "mode": "dry-run",
+    "question": "What does the company dress code policy typically advise employees to do?",
+    "proposed_answer": "Dress in business casual attire",
+    "reasoning": "Gemini: The passage explicitly states that a common dress code policy might specify business casual attire."
+  },
+  {
+    "timestamp": "2026-11-11T18:37:06.301628",
+    "mode": "dry-run",
+    "question": "What is the main purpose of understanding company policies for a new employee as per the paragraph?",
+    "proposed_answer": "To adapt quickly and contribute positively",
+    "reasoning": "Gemini: The passage explicitly states that understanding company rules helps new employees adapt quickly and contribute positively to the workplace culture."
+  },
+  {
+    "timestamp": "2026-11-11T18:37:18.389531",
+    "mode": "dry-run",
+    "question": "Why is punctuality emphasized in company policies according to the text?",
+    "proposed_answer": "To show respect for colleagues' time",
+    "reasoning": "Gemini: The passage explicitly states that punctuality is expected to foster a productive work environment and show respect for colleagues' time."
+  },
+  {
+    "timestamp": "2026-11-11T18:37:31.526122",
+    "mode": "dry-run",
+    "question": "How are employees expected to manage personal device usage during work hours based on the policy?",
+    "proposed_answer": "Limit phone calls and social media to breaks",
+    "reasoning": "Gemini: The passage explicitly states that companies may limit phone calls and social media to breaks only to maintain focus and efficiency."
+  },
+  {
+    "timestamp": "2026-11-11T18:37:44.656758",
+    "mode": "dry-run",
+    "question": "Which of the following is NOT mentioned as a part of the company's policy in the paragraph?",
+    "proposed_answer": "Vacation days",
+    "reasoning": "Gemini: The passage discusses dress code, punctuality, and personal device usage, but does not mention vacation days."
+  },
+  {
+    "timestamp": "2026-11-11T18:45:44.800147",
+    "mode": "dry-run",
+    "question": "What information does a meeting agenda typically include?",
+    "proposed_answer": "A list of topics to be discussed",
+    "reasoning": "Gemini: The passage explicitly states that a typical meeting agenda includes the list of topics to be discussed."
+  },
+  {
+    "timestamp": "2026-11-11T18:45:50.835134",
+    "mode": "dry-run",
+    "question": "What is the purpose of specifying the time allocated to each topic?",
+    "proposed_answer": "To ensure each topic gets enough attention",
+    "reasoning": "Gemini: Allocating time to specific topics helps ensure that meetings run smoothly and on time by organizing the discussion effectively."
+  },
+  {
+    "timestamp": "2026-11-11T18:46:06.831003",
+    "mode": "dry-run",
+    "question": "What benefit comes from listing the person responsible for each topic in an agenda?",
+    "proposed_answer": "It lets participants know who will lead each discussion",
+    "reasoning": "Gemini: Assigning a person responsible for a topic helps participants know who is leading the discussion, which contributes to the agenda's goal of ensuring meetings run smoothly and effectively."
+  },
+  {
+    "timestamp": "2026-11-11T18:46:11.743069",
+    "mode": "dry-run",
+    "question": "Why is it important to understand the elements of a meeting agenda?",
+    "proposed_answer": "To ensure meetings run smoothly and on time",
+    "reasoning": "Gemini: The passage explicitly states that understanding agenda elements ensures that meetings run smoothly and on time."
+  },
+  {
+    "timestamp": "2026-11-11T18:46:17.035214",
+    "mode": "dry-run",
+    "question": "What might be included beside each topic on an agenda?",
+    "proposed_answer": "The time allocated and the person responsible",
+    "reasoning": "Gemini: The passage explicitly states that an agenda may specify the person responsible for each topic and the time allocated to each."
+  },
+  {
+    "timestamp": "2026-11-11T18:55:33.496442",
+    "mode": "dry-run",
+    "question": "What happens when a team has a meeting about a project?",
+    "proposed_answer": "They talk about tasks, deadlines, and roles",
+    "reasoning": "Gemini: The passage explicitly states that when a team plans a project in a meeting, they talk about tasks, deadlines, and roles."
+  },
+  {
+    "timestamp": "2026-11-11T18:55:38.113755",
+    "mode": "dry-run",
+    "question": "Why is a meeting agenda important?",
+    "proposed_answer": "It helps people stay on topic and use time wisely",
+    "reasoning": "Gemini: The passage explicitly states that an agenda helps people stay on topic and use time wisely."
+  },
+  {
+    "timestamp": "2026-11-11T18:55:42.929458",
+    "mode": "dry-run",
+    "question": "What should everyone in a meeting know?",
+    "proposed_answer": "Why they are there and what they need to do",
+    "reasoning": "Gemini: The passage explicitly states that everyone in the meeting should know why they are there and what they need to do."
+  },
+  {
+    "timestamp": "2026-11-11T18:56:08.495842",
+    "mode": "dry-run",
+    "question": "What is the main purpose of a meeting?",
+    "proposed_answer": "To discuss topics and make decisions",
+    "reasoning": "Heuristic: Matched key terms 'To discuss topics and make decisions' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T18:56:15.777614",
+    "mode": "dry-run",
+    "question": "What example is given for a meeting topic?",
+    "proposed_answer": "Planning a project",
+    "reasoning": "Heuristic: Matched key terms 'Planning a project' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T18:56:56.441612",
+    "mode": "dry-run",
+    "question": "What is the purpose of a meeting agenda?",
+    "proposed_answer": "To outline the topics for discussion",
+    "reasoning": "Gemini: The passage explicitly defines a meeting agenda as an essential tool used to outline the topics that will be discussed during a meeting."
+  },
+  {
+    "timestamp": "2026-11-11T18:57:01.743605",
+    "mode": "dry-run",
+    "question": "Who might need to lead discussions according to the agenda?",
+    "proposed_answer": "Specific individuals",
+    "reasoning": "Gemini: The passage explicitly states that an agenda helps participants identify any specific individuals who need to present or lead discussions."
+  },
+  {
+    "timestamp": "2026-11-11T18:57:08.107739",
+    "mode": "dry-run",
+    "question": "What is usually included in a meeting agenda?",
+    "proposed_answer": "Topics for discussion",
+    "reasoning": "Gemini: The passage explicitly defines a meeting agenda as a tool used to outline the topics that will be discussed during a meeting."
+  },
+  {
+    "timestamp": "2026-11-11T18:57:13.159839",
+    "mode": "dry-run",
+    "question": "What can participants identify by reading an agenda carefully?",
+    "proposed_answer": "The order of topics",
+    "reasoning": "Gemini: The passage explicitly states that participants can identify key details such as the order of topics by reading an agenda carefully."
+  },
+  {
+    "timestamp": "2026-11-11T18:57:18.026335",
+    "mode": "dry-run",
+    "question": "Why is a time set for each agenda item?",
+    "proposed_answer": "To ensure the meeting stays on track",
+    "reasoning": "Gemini: The passage explicitly states that setting a time for each item ensures that the meeting stays on track and covers all necessary points efficiently."
+  },
+  {
+    "timestamp": "2026-11-11T18:58:06.778094",
+    "mode": "dry-run",
+    "question": "Training meetings are designed to do what for team members?",
+    "proposed_answer": "Enhance skills",
+    "reasoning": "Gemini: The passage explicitly states that training meetings are designed to enhance the skills of team members."
+  },
+  {
+    "timestamp": "2026-11-11T18:58:12.629490",
+    "mode": "dry-run",
+    "question": "Which type of meeting is primarily about discussing future projects and setting goals?",
+    "proposed_answer": "Planning meeting",
+    "reasoning": "Gemini: The passage explicitly states that planning meetings are held to discuss future projects and set goals."
+  },
+  {
+    "timestamp": "2026-11-11T18:58:17.894787",
+    "mode": "dry-run",
+    "question": "Which meeting type focuses on providing constructive criticism?",
+    "proposed_answer": "Feedback meeting",
+    "reasoning": "Gemini: The passage explicitly states that feedback meetings focus on evaluating completed work and providing constructive criticism."
+  },
+  {
+    "timestamp": "2026-11-11T18:58:23.374690",
+    "mode": "dry-run",
+    "question": "Why is it important to recognize the type of meeting beforehand?",
+    "proposed_answer": "To prepare appropriately and contribute effectively",
+    "reasoning": "Gemini: The passage explicitly states that recognizing the meeting type helps participants prepare appropriately and contribute effectively to ensure objectives are met."
+  },
+  {
+    "timestamp": "2026-11-11T18:58:28.504953",
+    "mode": "dry-run",
+    "question": "What is the main focus of feedback meetings?",
+    "proposed_answer": "Evaluating completed work",
+    "reasoning": "Gemini: The passage explicitly states that feedback meetings focus on evaluating completed work, providing constructive criticism, and suggesting improvements."
+  },
+  {
+    "timestamp": "2026-11-11T18:59:11.613811",
+    "mode": "dry-run",
+    "question": "What role assignment was discussed at the end of the meeting?",
+    "proposed_answer": "Facilitating smoother communication",
+    "reasoning": "Gemini: The passage states that roles were assigned to team members specifically to facilitate smoother communication and problem-solving."
+  },
+  {
+    "timestamp": "2026-11-11T18:59:19.288839",
+    "mode": "dry-run",
+    "question": "What was the main focus of the team meeting?",
+    "proposed_answer": "Improving project timelines",
+    "reasoning": "Gemini: The passage explicitly states that the primary focus of the team meeting was on improving the current project timelines."
+  },
+  {
+    "timestamp": "2026-11-11T18:59:25.997144",
+    "mode": "dry-run",
+    "question": "What was identified during the meeting as a potential project delay factor?",
+    "proposed_answer": "Bottlenecks in processes",
+    "reasoning": "Gemini: The passage explicitly states that the agenda included identifying any bottlenecks that could delay the project."
+  },
+  {
+    "timestamp": "2026-11-11T18:59:48.769266",
+    "mode": "dry-run",
+    "question": "What was the purpose of reviewing the progress of each department?",
+    "proposed_answer": "To identify bottlenecks",
+    "reasoning": "Heuristic: Matched key terms 'To identify bottlenecks' directly in passage."
+  },
+  {
+    "timestamp": "2026-11-11T19:00:00.571334",
+    "mode": "dry-run",
+    "question": "What strategy was discussed to ensure deadlines are met?",
+    "proposed_answer": "Weekly status updates",
+    "reasoning": "Gemini: The passage states that an important takeaway was the need for weekly updates from each department to track progress and ensure deadlines are met."
+  },
+  {
+    "timestamp": "2026-11-11T19:00:41.483647",
+    "mode": "dry-run",
+    "question": "Which section of the meeting agenda should the sales department focus on to align with their goals?",
+    "proposed_answer": "Marketing Strategies",
+    "reasoning": "Gemini: The Marketing Strategies section covers new campaign launches and target demographics, which directly aligns with the sales department's goals."
+  },
+  {
+    "timestamp": "2026-11-11T19:00:46.571471",
+    "mode": "dry-run",
+    "question": "Which section would be least relevant to someone working in the marketing department?",
+    "proposed_answer": "Product Development",
+    "reasoning": "Gemini: While all topics could be considered relevant to company operations, the provided passage lists Marketing Strategies as the section specifically designated for the marketing department, whereas Product Development focuses on software timelines and technical challenges."
+  },
+  {
+    "timestamp": "2026-11-11T19:00:56.656491",
+    "mode": "dry-run",
+    "question": "Which section should the HR department prioritize during the meeting?",
+    "proposed_answer": "Human Resources",
+    "reasoning": "Gemini: The passage states that it is important for each department to focus on the section that pertains most to their role, and the Human Resources section covers company policies."
+  },
+  {
+    "timestamp": "2026-11-11T19:01:02.020931",
+    "mode": "dry-run",
+    "question": "For a software developer, which agenda section provides the most pertinent information?",
+    "proposed_answer": "Product Development",
+    "reasoning": "Gemini: The Product Development section focuses on software release timelines and challenges, which directly relate to the role of a software developer."
+  },
+  {
+    "timestamp": "2026-11-11T19:01:07.006413",
+    "mode": "dry-run",
+    "question": "If a manager wants to understand the financial health of the company, which section should they review?",
+    "proposed_answer": "Financial Updates",
+    "reasoning": "Gemini: The passage explicitly states that the Financial Updates section will cover last quarter's earnings and projections for the next quarter."
+  },
+  {
+    "timestamp": "2026-11-11T19:02:16.817392",
+    "mode": "dry-run",
+    "question": "What is the main purpose of the email mentioned in the paragraph?",
+    "proposed_answer": "To request confirmation of attendance for the meeting",
+    "reasoning": "Gemini: The email explicitly requests the recipient to confirm their attendance for the meeting by a specific deadline."
+  },
+  {
+    "timestamp": "2026-11-11T19:02:37.934989",
+    "mode": "dry-run",
+    "question": "Where is the meeting scheduled to take place?",
+    "proposed_answer": "In the main conference room",
+    "reasoning": "Gemini: The passage explicitly states that the meeting is scheduled to take place in the main conference room."
+  },
+  {
+    "timestamp": "2026-11-11T19:02:43.001791",
+    "mode": "dry-run",
+    "question": "Why is your participation in the meeting considered vital according to the paragraph?",
+    "proposed_answer": "Because important decisions requiring everyone's input will be made",
+    "reasoning": "Gemini: The passage explicitly states that participation is vital because important decisions requiring everyone's input will be made."
+  },
+  {
+    "timestamp": "2026-11-11T19:02:48.050587",
+    "mode": "dry-run",
+    "question": "What will be discussed during the meeting according to the email?",
+    "proposed_answer": "The review of the past quarter's sales performance",
+    "reasoning": "Gemini: The passage explicitly states that the meeting will cover the review of the past quarter's sales performance."
+  },
+  {
+    "timestamp": "2026-11-11T19:02:54.571022",
+    "mode": "dry-run",
+    "question": "By which date should you confirm your attendance for the meeting?",
+    "proposed_answer": "5th November",
+    "reasoning": "Gemini: The passage explicitly states to confirm attendance by replying to the email by 5th November."
+  },
+  {
+    "timestamp": "2026-11-11T19:03:35.061892",
+    "mode": "dry-run",
+    "question": "Who is responsible for discussing the new employee onboarding process?",
+    "proposed_answer": "Sarah",
+    "reasoning": "Gemini: The passage explicitly states that the HR manager, Sarah, will discuss the new employee onboarding process."
+  },
+  {
+    "timestamp": "2026-11-11T19:03:40.469183",
+    "mode": "dry-run",
+    "question": "What is the role of John in the meeting?",
+    "proposed_answer": "Sharing marketing strategies",
+    "reasoning": "Gemini: The passage states that John from the marketing department will share the latest strategies for the upcoming product launch."
+  },
+  {
+    "timestamp": "2026-11-11T19:03:45.816296",
+    "mode": "dry-run",
+    "question": "What will the finance team present during the meeting?",
+    "proposed_answer": "Quarterly budget report",
+    "reasoning": "Gemini: The passage explicitly states that the finance team led by David will present the quarterly budget report."
+  },
+  {
+    "timestamp": "2026-11-11T19:03:52.758161",
+    "mode": "dry-run",
+    "question": "Which participant should review the quarterly budget report before the meeting?",
+    "proposed_answer": "David",
+    "reasoning": "Gemini: The passage states that the finance team led by David will present the quarterly budget report, and all attendees are requested to review the relevant documents beforehand."
+  },
+  {
+    "timestamp": "2026-11-11T19:03:58.236558",
+    "mode": "dry-run",
+    "question": "Which participant will provide an update on the ongoing projects?",
+    "proposed_answer": "Emily",
+    "reasoning": "Gemini: The passage explicitly states that our project manager, Emily, will update the team on the progress of ongoing projects."
+  },
+  {
+    "timestamp": "2026-11-11T19:04:40.299458",
+    "mode": "dry-run",
+    "question": "How much time is allocated for the introduction?",
+    "proposed_answer": "15 minutes",
+    "reasoning": "Gemini: The passage explicitly states that the agenda begins with a 15-minute introduction by the team leader."
+  },
+  {
+    "timestamp": "2026-11-11T19:05:00.614433",
+    "mode": "dry-run",
+    "question": "Which part of the meeting is allotted the longest duration?",
+    "proposed_answer": "Discussion about resource allocation",
+    "reasoning": "Gemini: The discussion about resource allocation is allotted 30 minutes, which is the longest duration among all the listed meeting segments."
+  },
+  {
+    "timestamp": "2026-11-11T19:05:06.331562",
+    "mode": "dry-run",
+    "question": "What is the total duration of the meeting?",
+    "proposed_answer": "90 minutes",
+    "reasoning": "Gemini: The passage explicitly states that the total time allocated for the meeting is 90 minutes."
+  },
+  {
+    "timestamp": "2026-11-11T19:05:11.839625",
+    "mode": "dry-run",
+    "question": "What is scheduled immediately after the introduction?",
+    "proposed_answer": "Project objectives presentation",
+    "reasoning": "Gemini: The passage states that the 15-minute introduction is followed by a 20-minute presentation on the project's objectives."
+  },
+  {
+    "timestamp": "2026-11-11T19:05:17.582219",
+    "mode": "dry-run",
+    "question": "How long is the meeting break?",
+    "proposed_answer": "5 minutes",
+    "reasoning": "Gemini: The passage explicitly states there will be a brief 5-minute break after the question and answer session."
+  },
+  {
+    "timestamp": "2026-11-11T19:06:07.811689",
+    "mode": "dry-run",
+    "question": "By when does the product development team need to have the new features ready for launch?",
+    "proposed_answer": "End of the month",
+    "reasoning": "Heuristic: Matched key terms 'End of the month' directly in passage."
+  }
+]

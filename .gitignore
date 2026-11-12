@@ -1,0 +1,29 @@
+# Browser profiles and persistent sessions (contains cache and cookies)
+.browser_profile/
+*/.browser_profile/
+*/**/.browser_profile/
+*.browser_profile*
+
+# Environment secrets
+.env
+*/.env
+*/**/.env
+
+# Python bytecode and caches
+__pycache__/
+*/__pycache__/
+*/**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary screenshots from runs
+*.png
+*/*.png
+
+# System logs and zips
+*.log
+*.zip
+
+# OS files
+Thumbs.db
+.DS_Store

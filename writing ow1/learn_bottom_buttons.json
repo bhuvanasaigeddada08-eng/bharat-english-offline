@@ -1,0 +1,116 @@
+[
+  {
+    "text": "",
+    "className": "btn btn-ghost btn-sm btn-square",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "1",
+    "className": "flex items-center gap-1 sm:gap-2 bg-base-200 text-base-content/70 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-0 cursor-pointer hover:bg-base-300 transition-colors",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "14,800\n+100",
+    "className": "flex items-center gap-1 sm:gap-2 bg-base-200 text-base-content/70 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-0 cursor-pointer hover:bg-base-300 transition-colors",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "5",
+    "className": "relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-base-200 text-base-content/70 border-0 cursor-pointer hover:bg-base-300 transition-colors",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "My Account",
+    "className": "btn btn-ghost gap-2",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "Home",
+    "className": "fe-sidebar-item font-semibold ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "AI BET",
+    "className": "fe-sidebar-item font-semibold ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "Adaptive Learning",
+    "className": "fe-sidebar-item font-semibold active ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "",
+    "className": "fe-sidebar-item fe-sidebar-child ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "",
+    "className": "fe-sidebar-item fe-sidebar-child ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "Share",
+    "className": "fe-sidebar-item font-semibold ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "Help Center",
+    "className": "fe-sidebar-item font-semibold ng-star-inserted",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "Back",
+    "className": "btn btn-ghost btn-sm gap-1.5 pl-1 text-base-content/70 hover:text-primary hover:-translate-x-1 hover:bg-primary/10 transition-all duration-200",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "I've finished reading",
+    "className": "btn btn-primary btn-sm border-0 shadow-md gap-1.5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200",
+    "disabled": true,
+    "ariaDisabled": null
+  },
+  {
+    "text": "",
+    "className": "bg-primary border-0 cursor-grab duration-[250ms] ease-out fixed flex h-[60px] hover:scale-105 items-center justify-center rounded-full select-none shadow-primary/40 shadow-xl text-primary-content touch-none transition-[left,top,transform] w-[60px] z-[61]",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "",
+    "className": "w-9 h-9 rounded-[10px] border-0 bg-primary-content/15 text-primary-content flex items-center justify-center shrink-0 cursor-pointer hover:bg-primary-content/25 transition-colors",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "New query",
+    "className": "flex-1 border-0 rounded-[9px] py-2 !text-[13px] cursor-pointer transition-colors bg-primary-content text-primary font-bold",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "My queries",
+    "className": "flex-1 border-0 rounded-[9px] py-2 !text-[13px] cursor-pointer transition-colors font-semibold bg-transparent text-primary-content",
+    "disabled": false,
+    "ariaDisabled": null
+  },
+  {
+    "text": "Submit query",
+    "className": "btn btn-primary border-0 shadow-md w-full gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200",
+    "disabled": false,
+    "ariaDisabled": null
+  }
+]

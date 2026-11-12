@@ -1,0 +1,84 @@
+[
+  {
+    "timestamp": "2026-11-11T20:18:49.073995",
+    "type": "writing",
+    "prompt": "You recently had a call with a new client about a business proposal. You want to follow up not just to ask for missing information (like expected delivery time), but also to ask if any documents or samples are available to better understand their expectations. Your email should include: * Reference to the call * A question about delivery timeline * A request for supporting materials (documents/samples) * A professional tone and closing",
+    "bullets": [
+      "Reference to the call",
+      "Question about delivery timeline",
+      "Request for supporting materials",
+      "Professional tone",
+      "Professional closing"
+    ],
+    "response": "Subject: Follow-up regarding our recent proposal discussion\n\nDear Client,\n\nThank you for the productive call earlier today to discuss our business proposal. I am excited about the potential partnership. \n\nTo ensure our planning remains accurate, could you please confirm your expected delivery timeline? Additionally, if you have any relevant project documents or product samples available for review, please share them with me. These materials will help us better align our strategy with your expectations.\n\nI look forward to your response.\n\nBest regards,\nBhuvana",
+    "word_count": 83
+  },
+  {
+    "timestamp": "2026-11-11T20:19:02.144425",
+    "type": "writing",
+    "prompt": "You had a product discussion with a vendor over email. You now need more information about the payment terms. Write a polite follow-up email requesting the details. Your email should include: * Mention of the previous conversation * A request for payment terms (like deadline, method, etc.) * A closing with thanks",
+    "bullets": [
+      "Mention of the previous conversation",
+      "Request for payment deadline",
+      "Request for payment method",
+      "Polite closing",
+      "Expression of thanks"
+    ],
+    "response": "Subject: Follow-up regarding product discussion and payment terms\n\nDear Vendor Team,\n\nThank you for the productive discussion earlier regarding your product offerings. I am currently reviewing the details to move forward with our procurement process. Could you please provide clarification on your standard payment terms? Specifically, I would like to know your preferred payment methods and the required deadlines for settling invoices.\n\nI appreciate your assistance with this information. I look forward to hearing from you soon.\n\nBest regards,\nBhuvana",
+    "word_count": 80
+  },
+  {
+    "timestamp": "2026-11-11T20:24:17.103215",
+    "type": "writing",
+    "prompt": "You attended a meeting yesterday with your HR manager about your upcoming training session. You forgot to ask about the training location. Write a short email to request this information. Your email should include: * A thank-you note for the meeting * A clear question asking for the location * A polite closing",
+    "bullets": [
+      "Thank-you note for the meeting",
+      "Clear question asking for the training location",
+      "Polite closing",
+      "Subject line",
+      "Proper salutation"
+    ],
+    "response": "Subject: Training session location details\n\nDear Sarah,\n\nThank you very much for taking the time to meet with me yesterday to discuss my upcoming professional development. I truly appreciate your support and guidance regarding the training schedule.\n\nI realized after our conversation that I forgot to ask about the specific location for the session. Could you please let me know where the training will be held?\n\nI look forward to hearing from you soon.\n\nBest regards,\n\nBhuvana",
+    "word_count": 77
+  },
+  {
+    "timestamp": "2026-11-11T20:57:07.598675",
+    "type": "writing",
+    "prompt": "You received feedback from your colleague Ramesh on your client proposal. His input helped you fix some key mistakes. Write an email to thank him, and also suggest that you both work together on future proposals. Your email should include: What he helped you with Why his input was valuable A polite suggestion to collaborate again",
+    "bullets": [
+      "Thank Ramesh for his feedback",
+      "Mention specific help received",
+      "Explain why his input was valuable",
+      "Politely suggest future collaboration",
+      "Use a friendly closing"
+    ],
+    "response": "Subject: Thank you for your help yesterday\n\nDear Ramesh,\n\nYour guidance was incredibly helpful and gave me complete confidence in moving forward. Regarding the matter, I will ensure that mention specific help received is properly handled. Regarding the matter, I will ensure that explain why his input was valuable is properly handled. I would love the opportunity to collaborate with you on similar upcoming initiatives in the future.\n\nThank you once again for your assistance.\n\nBest regards,\nBhuvana",
+    "word_count": 78
+  },
+  {
+    "timestamp": "2026-11-11T20:57:12.299899",
+    "type": "writing",
+    "prompt": "Your colleague Priya helped you yesterday by explaining a part of the new project. Write a short email to thank her for her help. Your email should include: When she helped you What she helped with A thank-you sentence",
+    "bullets": [
+      "Mentions when Priya helped",
+      "Describes what Priya helped with",
+      "Includes a thank-you sentence"
+    ],
+    "response": "Subject: Thank you for your help yesterday\n\nHi Priya,\n\nI wanted to reach out and thank you for taking the time to assist me yesterday afternoon. I truly appreciate you explaining the key components and requirements of the new project in such clear detail. Your guidance was incredibly helpful and gave me complete confidence in moving forward.\n\nThanks again for all your help!\n\nBest,\nBhuvana",
+    "word_count": 65
+  },
+  {
+    "timestamp": "2026-11-11T20:57:16.964640",
+    "type": "writing",
+    "prompt": "After a team meeting, your colleague John shared some good ideas that helped improve your presentation. Write a follow-up email to thank him for his input. Your email should include: Mention of the meeting A sentence about the ideas he shared Thanks and a positive remark",
+    "bullets": [
+      "Mention of the meeting",
+      "Sentence about the ideas he shared",
+      "Expression of thanks",
+      "Positive remark",
+      "Appropriate closing"
+    ],
+    "response": "Subject: Thank you for your help yesterday\n\nDear John,\n\nRegarding the matter, I will ensure that mention of the meeting is properly handled. Regarding the matter, I will ensure that sentence about the ideas he shared is properly handled. Your guidance was incredibly helpful and gave me complete confidence in moving forward. Regarding the matter, I will ensure that positive remark is properly handled.\n\nThank you once again for your assistance.\n\nBest regards,\nBhuvana",
+    "word_count": 74
+  }
+]
