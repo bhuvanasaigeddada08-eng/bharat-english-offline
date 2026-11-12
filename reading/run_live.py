@@ -10,32 +10,53 @@ READING_SKILL_URL = "https://corporate.bharatenglish.org/#/adaptive-learning/ski
 
 def ensure_logged_in(page, target_url):
     """Checks if the user needs to log in, prompts in terminal, and waits until logged in."""
+    LOGIN_URL = "https://corporate.bharatenglish.org/#/user/login"
+    
+    # 1. Close extra blank tabs and bring page to front
+    for p in page.context.pages:
+        if p != page and (p.url == "about:blank" or not p.url.startswith("http")):
+            try:
+                p.close()
+            except Exception:
+                pass
+    page.bring_to_front()
+
+    # 2. Fresh login requested for a friend
     if os.getenv("BHARAT_FORCE_LOGOUT") == "1":
-        print("[Account Switch] Fresh Login requested -> clearing cookies for new friend...")
+        print("[Account Switch] Fresh Login requested -> Loading login page for new friend...")
+        os.environ["BHARAT_FORCE_LOGOUT"] = "0"
         try:
             page.context.clear_cookies()
-            page.goto("https://corporate.bharatenglish.org/#/login")
-            page.wait_for_timeout(2500)
+        except Exception:
+            pass
+        page.goto(LOGIN_URL)
+        page.wait_for_timeout(3000)
+        try:
             page.evaluate("() => { localStorage.clear(); sessionStorage.clear(); }")
-            os.environ["BHARAT_FORCE_LOGOUT"] = "0"
+            page.goto(LOGIN_URL)
+            page.wait_for_timeout(3000)
         except Exception:
             pass
     else:
         print(f"[Nav] Checking login state at: {target_url}")
         page.goto(target_url)
         page.wait_for_timeout(3500)
-    
+        if page.url == "about:blank":
+            page.goto(target_url)
+            page.wait_for_timeout(3500)
+
+    # 3. Detect if currently on login screen
     is_login_page = ("login" in page.url or 
                      page.locator("input[type='password']").count() > 0 or 
                      page.locator("button:has-text('Sign In'), button:has-text('Log In'), button:has-text('Login')").count() > 0)
-    
+
     if is_login_page:
         print("\n" + "=" * 70)
         print(" [ACTION REQUIRED] Please Log In to Bharat English in the Chrome window.")
         print(" Enter credentials for your account or your friend's account.")
         print(" Waiting for you to complete login... (Auto-starting after login)")
         print("=" * 70)
-        
+
         while True:
             page.wait_for_timeout(2500)
             current_url = page.url

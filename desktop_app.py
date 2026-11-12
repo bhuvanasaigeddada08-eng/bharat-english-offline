@@ -680,14 +680,17 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
 
 def clear_friend_session():
-    if os.path.exists(SESSION_DIR):
+    global active_runner_process
+    if active_runner_process and active_runner_process.poll() is None:
         try:
-            shutil.rmtree(SESSION_DIR, ignore_errors=True)
+            active_runner_process.terminate()
+            active_runner_process.wait(timeout=2)
         except Exception:
             pass
+
     os.environ["BHARAT_FORCE_LOGOUT"] = "1"
-    append_log("[Account Switch] Previous session wiped! Ready for new friend's login.")
-    update_ai_state({"status": "Ready for Friend", "current_question": "Click a module above to launch login for your friend."})
+    append_log("[Account Switch] Switch requested! The next course launch will open directly to the login page for your friend.")
+    update_ai_state({"status": "Ready for Friend", "current_question": "Click any module above. Chrome will open directly to the login page."})
 
 def start_runner(mode):
     global active_runner_process, active_runner_thread
@@ -708,6 +711,10 @@ def start_runner(mode):
         }
         script_path = script_map.get(mode, script_map["full"])
         env = os.environ.copy()
+        env["BHARAT_AI_ENGINE"] = state["engine"]
+        if os.environ.get("BHARAT_FORCE_LOGOUT") == "1":
+            env["BHARAT_FORCE_LOGOUT"] = "1"
+            os.environ["BHARAT_FORCE_LOGOUT"] = "0"
         env["BHARAT_AI_ENGINE"] = state["engine"]
 
         active_runner_process = subprocess.Popen(

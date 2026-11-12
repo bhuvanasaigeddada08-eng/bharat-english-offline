@@ -1,7 +1,6 @@
 import os
 from playwright.sync_api import sync_playwright
 
-# Share single persistent session so login carries over from Listening -> Reading -> Writing
 SESSION_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".active_session"))
 
 try:
@@ -37,7 +36,15 @@ class BrowserManager:
                 "--no-default-browser-check"
             ]
         )
-        self.page = self.context.pages[0] if self.context.pages else self.context.new_page()
+        
+        pages = self.context.pages
+        self.page = pages[0] if pages else self.context.new_page()
+        for p in pages[1:]:
+            try:
+                p.close()
+            except Exception:
+                pass
+        self.page.bring_to_front()
         return self.page
 
     def close(self):
