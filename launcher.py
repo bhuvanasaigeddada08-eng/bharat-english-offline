@@ -1,109 +1,154 @@
 import os
 import sys
+import shutil
 import subprocess
 import threading
 import tkinter as tk
-from tkinter import ttk, scrolledtext
+from tkinter import ttk, scrolledtext, messagebox
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SESSION_DIR = os.path.join(BASE_DIR, ".active_session")
+
+try:
+    import ctypes
+    user32 = ctypes.windll.user32
+    screen_w = user32.GetSystemMetrics(0)
+    screen_h = user32.GetSystemMetrics(1)
+    half_w = screen_w // 2
+except Exception:
+    screen_w = 1920
+    screen_h = 1080
+    half_w = 960
 
 MODULES = {
-    "Full Course (All 3 Skills)": os.path.join(BASE_DIR, "run_full_course.py"),
+    "Full Course (90 Lessons)": os.path.join(BASE_DIR, "run_full_course.py"),
     "Listening (30 Lessons)": os.path.join(BASE_DIR, "listening", "run_live.py"),
     "Reading (30 Lessons)": os.path.join(BASE_DIR, "reading", "run_live.py"),
     "Writing (30 Lessons)": os.path.join(BASE_DIR, "writing ow1", "run_live.py"),
 }
 
-class BharatEnglishLauncher:
+class BharatEnglishSplitLauncher:
     def __init__(self, root):
         self.root = root
-        self.root.title("Bharat English Autonomous Assistant")
-        self.root.geometry("820x620")
-        self.root.configure(bg="#181825")
+        self.root.title("Bharat English AI Controller (Split Screen)")
+        
+        # Snap launcher to the RIGHT HALF of the display
+        right_w = screen_w - half_w
+        self.root.geometry(f"{right_w}x{screen_h - 60}+{half_w}+0")
+        self.root.configure(bg="#11111b")
         self.process = None
 
-        # Header Title
+        # Title Header
+        header = tk.Frame(root, bg="#181825", pady=10)
+        header.pack(fill=tk.X)
+
         title = tk.Label(
-            root,
-            text="Bharat English Autonomous Platform Runner",
-            font=("Segoe UI", 16, "bold"),
+            header,
+            text="Bharat English Offline Autonomous Controller",
+            font=("Segoe UI", 14, "bold"),
             fg="#cdd6f4",
             bg="#181825"
         )
-        title.pack(pady=(16, 4))
+        title.pack()
 
         subtitle = tk.Label(
-            root,
-            text="Automatic Login Detection | 30 Modules per Skill | Auto Next Advancing",
-            font=("Segoe UI", 10),
+            header,
+            text="Left: Live Chrome Preview  |  Right: AI Solver & Live Logs",
+            font=("Segoe UI", 9),
             fg="#a6adc8",
             bg="#181825"
         )
-        subtitle.pack(pady=(0, 16))
+        subtitle.pack(pady=(2, 0))
 
-        # Action Buttons Grid Frame
-        btn_frame = tk.Frame(root, bg="#181825")
-        btn_frame.pack(pady=4)
+        # Friend / Account Switch Bar
+        acc_frame = tk.Frame(root, bg="#1e1e2e", pady=8, padx=15)
+        acc_frame.pack(fill=tk.X, padx=15, pady=(10, 5))
+
+        acc_title = tk.Label(
+            acc_frame,
+            text="Account Management (Multiple Friends / Accounts):",
+            font=("Segoe UI", 10, "bold"),
+            fg="#89b4fa",
+            bg="#1e1e2e"
+        )
+        acc_title.pack(side=tk.LEFT)
+
+        btn_new_friend = tk.Button(
+            acc_frame,
+            text="👤 Log In New Friend (Fresh Account)",
+            font=("Segoe UI", 9, "bold"),
+            bg="#f38ba8",
+            fg="#11111b",
+            relief=tk.FLAT,
+            cursor="hand2",
+            padx=10,
+            pady=3,
+            command=self.clear_session_for_friend
+        )
+        btn_new_friend.pack(side=tk.RIGHT)
+
+        # Primary Action Buttons
+        btn_frame = tk.Frame(root, bg="#11111b")
+        btn_frame.pack(pady=8, padx=15, fill=tk.X)
 
         self.btn_full = tk.Button(
             btn_frame,
-            text="⚡ Run All 3 (Full Course)",
+            text="⚡ Run Full Course (All 3 Skills)\nListening (30) ➔ Reading (30) ➔ Writing (30)",
             font=("Segoe UI", 11, "bold"),
             bg="#fab387",
             fg="#11111b",
-            width=22,
             height=2,
             relief=tk.FLAT,
             cursor="hand2",
-            command=lambda: self.launch_script("Full Course (All 3 Skills)")
+            command=lambda: self.launch_script("Full Course (90 Lessons)")
         )
-        self.btn_full.grid(row=0, column=0, padx=6, pady=4)
+        self.btn_full.pack(fill=tk.X, pady=(0, 6))
+
+        sub_btn_frame = tk.Frame(btn_frame, bg="#11111b")
+        sub_btn_frame.pack(fill=tk.X)
 
         self.btn_listening = tk.Button(
-            btn_frame,
+            sub_btn_frame,
             text="🎧 Listening (30)",
-            font=("Segoe UI", 11, "bold"),
+            font=("Segoe UI", 10, "bold"),
             bg="#89b4fa",
             fg="#11111b",
-            width=16,
             height=2,
             relief=tk.FLAT,
             cursor="hand2",
             command=lambda: self.launch_script("Listening (30 Lessons)")
         )
-        self.btn_listening.grid(row=0, column=1, padx=6, pady=4)
+        self.btn_listening.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=(0, 4))
 
         self.btn_reading = tk.Button(
-            btn_frame,
+            sub_btn_frame,
             text="📖 Reading (30)",
-            font=("Segoe UI", 11, "bold"),
+            font=("Segoe UI", 10, "bold"),
             bg="#a6e3a1",
             fg="#11111b",
-            width=16,
             height=2,
             relief=tk.FLAT,
             cursor="hand2",
             command=lambda: self.launch_script("Reading (30 Lessons)")
         )
-        self.btn_reading.grid(row=0, column=2, padx=6, pady=4)
+        self.btn_reading.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=2)
 
         self.btn_writing = tk.Button(
-            btn_frame,
+            sub_btn_frame,
             text="✍️ Writing (30)",
-            font=("Segoe UI", 11, "bold"),
+            font=("Segoe UI", 10, "bold"),
             bg="#f9e2af",
             fg="#11111b",
-            width=16,
             height=2,
             relief=tk.FLAT,
             cursor="hand2",
             command=lambda: self.launch_script("Writing (30 Lessons)")
         )
-        self.btn_writing.grid(row=0, column=3, padx=6, pady=4)
+        self.btn_writing.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=(4, 0))
 
-        # Stop Button & Status Bar
-        ctrl_frame = tk.Frame(root, bg="#181825")
-        ctrl_frame.pack(pady=10, fill=tk.X, padx=25)
+        # Status & Controls Bar
+        ctrl_frame = tk.Frame(root, bg="#181825", pady=6, padx=15)
+        ctrl_frame.pack(fill=tk.X, padx=15, pady=(8, 4))
 
         self.status_lbl = tk.Label(
             ctrl_frame,
@@ -117,31 +162,51 @@ class BharatEnglishLauncher:
         self.btn_stop = tk.Button(
             ctrl_frame,
             text="⏹ Stop Runner",
-            font=("Segoe UI", 10, "bold"),
+            font=("Segoe UI", 9, "bold"),
             bg="#f38ba8",
             fg="#11111b",
             relief=tk.FLAT,
             cursor="hand2",
             padx=12,
-            pady=4,
+            pady=3,
             command=self.stop_current
         )
         self.btn_stop.pack(side=tk.RIGHT)
 
-        # Output Terminal Screen
+        # Live Real-time Logs Console
         self.terminal = scrolledtext.ScrolledText(
             root,
-            bg="#11111b",
+            bg="#181825",
             fg="#a6e3a1",
             font=("Consolas", 10),
             insertbackground="white",
             relief=tk.FLAT
         )
-        self.terminal.pack(fill=tk.BOTH, expand=True, padx=25, pady=(0, 20))
+        self.terminal.pack(fill=tk.BOTH, expand=True, padx=15, pady=(5, 15))
 
     def append_log(self, text):
         self.terminal.insert(tk.END, text + "\n")
         self.terminal.see(tk.END)
+
+    def clear_session_for_friend(self):
+        if self.process and self.process.poll() is None:
+            messagebox.showwarning("Busy", "A runner is currently active. Stop it before switching accounts.")
+            return
+
+        if os.path.exists(SESSION_DIR):
+            try:
+                shutil.rmtree(SESSION_DIR, ignore_errors=True)
+            except Exception:
+                pass
+
+        os.environ["BHARAT_FORCE_LOGOUT"] = "1"
+        self.append_log("\n" + "=" * 65)
+        self.append_log("[Account Switch] Active session cleared successfully!")
+        self.append_log("Now click any button above. Chrome will open on the left half")
+        self.append_log("asking for your friend's login credentials.")
+        self.append_log("=" * 65 + "\n")
+        self.status_lbl.config(text="Status: Ready for New Friend Login", fg="#f9e2af")
+        messagebox.showinfo("Ready for New Friend", "Session cleared! Click any course button to log in for your friend.")
 
     def launch_script(self, label):
         if self.process and self.process.poll() is None:
@@ -155,7 +220,8 @@ class BharatEnglishLauncher:
 
         self.status_lbl.config(text=f"Status: Running {label}...", fg="#89b4fa")
         self.append_log(f"\n========================================================")
-        self.append_log(f" >>> LAUNCHING: {label} <<<")
+        self.append_log(f" >>> STARTING {label.upper()} <<<")
+        self.append_log(f" Chrome will dock on LEFT HALF | Controller on RIGHT HALF")
         self.append_log(f"========================================================")
 
         def runner():
@@ -177,7 +243,7 @@ class BharatEnglishLauncher:
             self.process.stdout.close()
             ret = self.process.wait()
             self.status_lbl.config(text="Status: Completed / Idle", fg="#a6e3a1")
-            self.append_log(f"\n[Finished] Execution completed with status code {ret}\n")
+            self.append_log(f"\n[Finished] Execution finished with status code {ret}\n")
 
         threading.Thread(target=runner, daemon=True).start()
 
@@ -191,5 +257,5 @@ class BharatEnglishLauncher:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = BharatEnglishLauncher(root)
+    app = BharatEnglishSplitLauncher(root)
     root.mainloop()

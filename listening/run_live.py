@@ -20,9 +20,20 @@ LISTENING_SKILL_URL = "https://corporate.bharatenglish.org/#/adaptive-learning/s
 
 def ensure_logged_in(page, target_url):
     """Checks if the user needs to log in, prompts in terminal, and waits until logged in."""
-    print(f"[Nav] Checking login state at: {target_url}")
-    page.goto(target_url)
-    page.wait_for_timeout(3500)
+    if os.getenv("BHARAT_FORCE_LOGOUT") == "1":
+        print("[Account Switch] Fresh Login requested -> clearing cookies for new friend...")
+        try:
+            page.context.clear_cookies()
+            page.goto("https://corporate.bharatenglish.org/#/login")
+            page.wait_for_timeout(2500)
+            page.evaluate("() => { localStorage.clear(); sessionStorage.clear(); }")
+            os.environ["BHARAT_FORCE_LOGOUT"] = "0"
+        except Exception:
+            pass
+    else:
+        print(f"[Nav] Checking login state at: {target_url}")
+        page.goto(target_url)
+        page.wait_for_timeout(3500)
     
     is_login_page = ("login" in page.url or 
                      page.locator("input[type='password']").count() > 0 or 
@@ -31,11 +42,12 @@ def ensure_logged_in(page, target_url):
     if is_login_page:
         print("\n" + "=" * 70)
         print(" [ACTION REQUIRED] Please Log In to Bharat English in the Chrome window.")
-        print(" Waiting for you to complete login... (Session will be saved)")
+        print(" Enter credentials for your account or your friend's account.")
+        print(" Waiting for you to complete login... (Auto-starting after login)")
         print("=" * 70)
         
         while True:
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(2500)
             current_url = page.url
             has_password = page.locator("input[type='password']").count() > 0
             if "login" not in current_url and not has_password and ("adaptive-learning" in current_url or "dashboard" in current_url or "skill" in current_url):
